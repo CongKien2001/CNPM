@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+
+.header{
+    height: 40px;
+    background-color: black;
+    display: flex;;
+}
+
+.header_ma{
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 150px;
+}
+.header_logo{
+    list-style: none;
+    margin-left: 700px;
+    margin-top: 9px;
+}
+.header_phone{
+    margin: 0 17px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+.header_facebook{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    background-color: rgb(58 88 157);
+    padding :5px 6px 5px 11px;
+    border-radius: 4px;
+}
+.header_instagram{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    background-color: #cb2950;
+    padding :5px 4px 5px 7px;
+    border-radius: 4px;
+}
+.header_twitter{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    background-color: #2478ba;
+    padding :5px 2px 5px 7px;
+    border-radius: 4px;
+}
+.header_youtube{
+    color: red;
+    text-decoration: none;  
+    font-size: 20px;
+    margin-left: 10px;
+    background-color: white;
+    padding :5px 6px 5px 6px;
+    border-radius: 4px;
+}
