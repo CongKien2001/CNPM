@@ -1,7 +1,8 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;  
+    box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif; 
 }
 
 .header{
@@ -12,8 +13,7 @@
 
 .header_ma{
     color: white;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
     font-weight: 700;
     margin-top: 10px;
     margin-left: 150px;
@@ -64,4 +64,88 @@
     background-color: white;
     padding :5px 6px 5px 6px;
     border-radius: 4px;
+}
+
+.header_logo_img{
+    background-color: white;
+    display: flex;
+    height: 85px;
+    padding-top: 2px;
+}
+.header_logo_TTKN{
+    width: 80px;
+    margin-left: 200px;
+}
+.header_search{
+    background-color: rgb(245 245 245);
+    height: 35px;
+    margin-left: 200px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.header_search_input{
+    background-color: rgb(245 245 245);
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.header_search_icon{
+    height: 35px;
+    outline: none;
+    border: none;
+    margin-left: 173px;
+    background-color: rgb(245 245 245);
+    cursor: pointer;
+    color: black;
+}
+.header_search_icon_color{
+    color: black;
+}
+.header_cart{
+   margin-left: 70px;
+   margin-top: 18px;
+}
+.header_cart_text{
+    font-weight:600;
+    font-size: 16px;
+    margin-top: 30px;
+    color: #000;
+    
+}
+.header_cart_logo{
+    font-size: 30px;
+    margin-left: 10px;
+    color: #000;
+}
+.header_login{
+    margin-left: 10px;
+    margin-top: 30px;
+}
+.header_login_text{
+    font-weight:600;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-top: 20px;
+    color: black;
+}
+.header_home{
+    background-color: white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_home_text{
+    color: black;
+    height: 60px;
+    padding-top: 20px; 
+    margin-left: 30px;
+    font-weight: 550;
+    padding-right: 20px;
+}
+.apple{
+    background-color: black;
+    height: 560px;
 }
