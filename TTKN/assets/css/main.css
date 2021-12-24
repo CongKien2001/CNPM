@@ -2,8 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 .header {
     position: relative;
@@ -17,6 +16,7 @@
     right: 0;
     left: 0;
     top: 0;
+    z-index: 10;
 }
 
 .header_right {
@@ -52,6 +52,7 @@
     font-size: 20px;
     margin-left: 10px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .header_facebook {
@@ -84,6 +85,7 @@
     right: 0;
     left: 0;
     top: 40px;
+    z-index: 10;
 }
 
 .header_logo_TTKN {
@@ -179,6 +181,7 @@
     right: 0;
     left: 0;
     top: 125px;
+    z-index: 10;
 }
 
 .header_home_text {
@@ -191,16 +194,167 @@
 }
 
 .content_home {
-    background-color: black;
-    height: 2000px;
+    position: relative;
 }
 
+.content_img{
+    height: 560px;
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/slider8-3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-top: 185px;
+    position: relative;
+}
+.content_heading span{
+    color: #fff;
+    display:block;
+}
+
+.content_heading{
+    position: absolute;
+    top :140px;
+    left: 150px;
+}
+
+.content_sinhnhat{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.content_apple{
+    margin-top: 20px;
+    font-size: 58px;
+    font-weight: 700;
+}
+
+.content_sale{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.content_xemngay{
+    color: #fff;
+    margin-top: 15px;
+}
+
+.btn_xemngay{
+    background-color: rgba(0, 0, 0, 0);
+    color:#fff;
+    padding: 8px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.content_down{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    font-size: 22px;
+    color: rgb(243, 242, 242);
+}
+
+.content_img_body{
+    display: flex;
+    margin: 60px 200px 0px;
+}
+
+.content_img_1{
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/product-10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 54%;
+    height: 180px;
+    position: relative;
+    width: 33.33333%;
+    background-color: rgb(0, 0, 0);
+    border: 8px solid;
+    margin: 0px 20px;
+}
+.content_img_2{
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/banner-3.jpg);    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 54%;
+    height: 180px;
+    position: relative;
+    width: 33.33333%;
+    background-color: rgb(0, 0, 0);
+    border: 8px solid;
+    margin: 0px 20px;
+
+}
+.content_img_3{
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/hero-1-1024x306.jpg);    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 54%;
+    height: 180px;
+    position: relative;
+    width: 33.33333%;
+    background-color: rgb(0, 0, 0);
+    border: 8px solid;
+    margin: 0px 20px;
+
+}
+
+.content_bgr{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.788);
+    opacity: 0.4;
+}
+
+.content_img_heading{
+    
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
+
+.content_img_heading span{
+    display: block;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Bắt đầu code điện thoại */
 .content_phone {
-    background: red;
-    height: 500px;
+    height: 350px;
     display: none;
+    margin-top: 185px;
+    background-color: #000;
 }
-
+.shop-big-img{
+    background-image: url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow1.png),url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow2.png);
+    height: 100%;
+    animation: rain 20s linear infinite;
+}
+@keyframes rain{
+    from{
+        background-position: 0px 0px;
+    }
+    to{
+        background-position: 500px 1000px;
+    }
+}
+    
 .content_tablet {
     background: yellow;
     height: 500px;
