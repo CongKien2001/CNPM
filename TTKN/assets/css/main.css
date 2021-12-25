@@ -3,6 +3,25 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+.grid.wide {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.grid{
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+.wide {
+    width: 644px;
+}
+
+span {
+    display: block;
+}
 
 .header {
     position: relative;
@@ -371,10 +390,6 @@
     color: #fff;
 }
 
-.samp {
-    display: block;
-}
-
 .content_tablet-content {
     position: absolute;
     top: 0;
@@ -407,6 +422,65 @@
     display: flex;
     justify-content: center;
     color: #fff;
+}
+
+.content_tablet-body {
+    padding-top: 35px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    height: 100%;
+}
+
+.shop_danhmuc-header span {
+    font-weight: 700;
+    padding-top: 2px;
+}
+
+.shop_NSX-header {
+    padding-top: 45px;
+}
+
+.shop_NSX-title {
+    font-weight: 700;
+    position: relative;
+}
+
+.shop_NSX-title::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: #ebe9e9;
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+}
+
+.shop_NSX-item-box {
+    padding-top: 10px;
+}
+
+.shop_NSX-list {
+    margin-top: 17px;
+}
+
+.shop_NSX-list a span {
+    color: #000;
+    padding: 5px 20px;
+    width: max-content;
+    border: 1px solid #e0dede;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.shop_NSX-a {
+    text-decoration: none;
+    color: #777;
 }
 
 /* Phụ kiện */
