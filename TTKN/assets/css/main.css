@@ -345,6 +345,11 @@
     background-image: url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow1.png),url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow2.png);
     height: 100%;
     animation: rain 20s linear infinite;
+    background-color: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 @keyframes rain{
     from{
@@ -354,25 +359,58 @@
         background-position: 500px 1000px;
     }
 }
-    
+/* Máy tính bảng */    
 .content_tablet {
-    background: yellow;
-    height: 500px;
+    height: 350px;
     display: none;
+    margin-top: 185px;
 }
 
+.samp {
+    display: block;
+}
+
+.content_tablet-content {
+
+}
+
+.content_tablet-content-header {
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
+.content_tablet-content-main {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.content_tablet-content-end {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.content_tablet-content-header,
+.content_tablet-content-main,
+.content_tablet-content-end {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Phụ kiện */
 .content_phukien {
     background: green;
     height: 500px;
     display: none;
 }
-
+/* Máy cũ giá rẽ */
 .content_oldphone {
     background: cyan;
     height: 500px;
     display: none;
 }
-
+/* Liên Hê */
 .content_contact {
     background: pink;
     height: 500px;
