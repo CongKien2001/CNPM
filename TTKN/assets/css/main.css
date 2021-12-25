@@ -485,10 +485,12 @@ span {
 
 /* Phụ kiện */
 .content_phukien {
-    background: green;
-    height: 500px;
+    height: 350px;
     display: none;
+    margin-top: 185px;
 }
+
+
 /* Máy cũ giá rẽ */
 .content_oldphone {
     background: cyan;
