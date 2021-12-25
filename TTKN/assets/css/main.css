@@ -339,17 +339,13 @@
     height: 350px;
     display: none;
     margin-top: 185px;
-    background-color: #000;
+
 }
 .shop-big-img{
     background-image: url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow1.png),url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow2.png);
     height: 100%;
     animation: rain 20s linear infinite;
     background-color: #000;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center
 }
 @keyframes rain{
     from{
@@ -359,11 +355,20 @@
         background-position: 500px 1000px;
     }
 }
-/* Máy tính bảng */    
+/* Máy tính bảng */  
 .content_tablet {
     height: 350px;
     display: none;
     margin-top: 185px;
+}
+
+.content_tablet-header {
+    background-color: #000;
+    width: 100%;
+    height: 366px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
 }
 
 .samp {
@@ -371,7 +376,13 @@
 }
 
 .content_tablet-content {
-
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content_tablet-content-header {
