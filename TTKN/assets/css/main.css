@@ -341,14 +341,161 @@ span {
     font-weight: 600;
     text-align: center;
 }
+/* ------------ */
+.content_sanpham{
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+}
 
+.content_sanphamhot{
+    display: flex;
+    align-items: center;
+    padding: 80px 0 0;
+    
+}
 
+.content_sanphamhot span{
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
 
+.content_sanphamhot hr{
+    flex: 1;
+    height: 2px;
+}
 
+hr{
+    margin: 0;
+}
+/* -------------------- */
+.content_phone_main{
+    margin-top: 40px !important;
+    display: flex;
+}
 
+.content_phone_items{
+    width: 25%;
 
+}
 
+.content_phone_selling_img{
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
 
+.content_phone_img{
+    width: 100%;
+}
+
+.content_phone_selling_img a img{
+    width: 252px;
+    height: 252px;
+    object-fit: cover;
+}
+.content_phone_price{
+    display: flex;
+    justify-content: center;
+}
+
+.content_phone_price_old{
+    text-decoration: line-through;
+    font-size: 14px;
+    color: rgb(117,117,117);
+    margin-right: 9px;
+    margin-top: 2px;
+}
+
+.content_phone_price_now{
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.content_phone_cart{
+    DISPLAY: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.content_phone_btn{
+    border-radius: 0;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+}
+
+.btn{
+    height: 36px;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--white-color-);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-color-);
+    cursor: pointer;
+}
+.content_phone_name span{
+    text-align: center;
+    padding: 0 10px ;
+}
+.content_phone_info{
+    padding-top: 20px
+}
+
+.content_phone_cart_btn{
+    text-decoration: none;
+    color: #777;
+}
+
+.content_phone_cart_btn_add{
+    border: 2px solid #000;
+    padding: 6px 12px 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+span{
+    display: block;
+}
+
+/*  ------------------*/
+.content_giamgia{
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.content_giamgiasoc{
+    display: flex;
+    align-items: center;
+    padding: 10px 0 ;
+    
+}
+
+.content_giamgiasoc span{
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+.content_giamgiasoc hr{
+    flex: 1;
+    height: 2px;
+}
+
+hr{
+    margin: 0;
+}
 
 
 
