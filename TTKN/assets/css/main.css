@@ -409,6 +409,15 @@ hr{
     font-size: 15px;
 }
 
+.content_phone_selling_img:hover 
+.content_phone_btn {
+    bottom: 14%;
+}
+
+.content_phone_name span {
+    display: block;
+}
+
 .content_phone_cart{
     DISPLAY: flex;
     justify-content: center;
