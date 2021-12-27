@@ -10,6 +10,7 @@
     height: 100%;
 }
 
+
 .grid{
     width: 100%;
     display: block;
@@ -335,6 +336,7 @@
     font-weight: 600;
     text-align: center;
 }
+
 /* ------------ */
 .content_sanpham{
     max-width: 1080px;
@@ -458,9 +460,6 @@ hr{
     transition: all 0.2s ease;
 }
 
-span{
-    display: block;
-}
 
 /*  ------------------*/
 .content_giamgia{
@@ -523,10 +522,6 @@ hr{
     max-width: 90%;
 }
 
-span{
-    display: block;
-}
-
 /* -----------bản quyền----------- */
 .content_footer_background{
     background-color: #000;
@@ -582,6 +577,16 @@ span{
 hr{
     margin: 0;
 }
+
+
+
+
+
+
+
+
+
+
 /* Bắt đầu code điện thoại */
 .content_phone {
     height: 350px;
@@ -666,9 +671,6 @@ option {
     display: block;
 }
 
-.shop_sanpham-list {
-
-}
 
 .dt {
     flex: 0 0 33.33333%;
