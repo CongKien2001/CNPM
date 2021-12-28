@@ -629,7 +629,8 @@ hr {
 }
 
 .footer_combo_box img {
-    width: 25%;
+    width: 70;
+    height: 70px;
 }
 
 .footer_combo_heading {
