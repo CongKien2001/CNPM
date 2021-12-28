@@ -164,8 +164,13 @@
     font-weight: 600;
     font-size: 16px;
     margin-left: 15px;
-    margin-top: 20px;
     color: black;
+    background-color: transparent;
+    border: none;
+}
+
+.header_login_text:hover {
+    cursor: pointer;
 }
 
 .header_home_text span {
@@ -547,19 +552,32 @@ hr {
 
 .content_footer_background {
     background-color: #000;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
-.footer {
+.content_footer_contenner {
     max-width: 1080px;
     margin: 0 auto;
     height: 100%;
+    display: flex;
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer {
+    width: 25%;
+}
+
+.content_footer_heading {
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
 }
 
 .footer-1 {
     color: #fff;
+    padding: 0 12px;
     margin-top: 30px;
-    width: 23%;
 }
 
 .footer-items {
@@ -600,6 +618,177 @@ hr {
 hr {
     margin: 0;
 }
+
+.footer_combo {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.footer_combo_box {
+    display: inline-flex;
+}
+
+.footer_combo_box img {
+    width: 25%;
+}
+
+.footer_combo_heading {
+    width: 75%;
+    padding-left: 20px;
+}
+
+.footer_combo_money {
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.footer_info {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0 12px;
+}
+
+.footer_infoo,
+.footer_address {
+    padding: 8px 0 12px;
+}
+
+
+/* Begin Modal Register */
+
+.modal-register.open {
+    display: flex;
+}
+
+.modal-login.open {
+    display: flex;
+}
+
+.modal-register,
+.modal-login {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginmain {
+    width: 450px;
+    min-height: 580px;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    position: relative;
+    animation: modalLoginFadeIn ease .5s;
+}
+
+.center {
+    text-align: center;
+}
+
+.logincontent {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding-top: 40px;
+    background-color: #ffffffb3;
+    box-shadow: 0 0 10px rgb(0 0 0 / 100%);
+}
+
+.loginheading-sub {
+    color: rgb(114, 114, 114);
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.logininput {
+    margin-top: 58px;
+}
+
+.loginrow {
+    padding-left: 16px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.loginrow p {
+    margin-bottom: 0;
+    padding-bottom: 8px;
+    font-weight: 550;
+}
+
+.loginrow a {
+    padding-left: 275px;
+    color: blue;
+}
+
+.padding-top-20 {
+    padding-top: 20px;
+}
+
+input {
+    padding: 8px;
+    width: 93%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.loginbton {
+    margin-top: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #00CED1;
+    font-weight: 550;
+    width: 93%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+}
+
+.loginbtnton {
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #00CED1;
+    font-weight: 550;
+    width: 93%;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+}
+
+.loginbton:hover,
+.loginbtnton:hover {
+    background-color: #00b6b9;
+    cursor: pointer;
+}
+
+.loginbton:active,
+.loginbtnton:active {
+    background-color: #764597;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+@keyframes modalLoginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* End Modal Register */
 
 
 /* Bắt đầu code điện thoại */
@@ -802,53 +991,6 @@ sup {
 }
 
 
-/* .shop_sotrang {
-    display: flex;
-    justify-content: center;
-}
-
-.shop_sotrang span {
-    height: 30px;
-    width: 30px;
-    color: #000;
-    border: 2px solid #000;
-    margin: 0 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.shop-sotrang .shop_page:hover {
-    color: #fff !important;
-    background-color: #000;
-}
-
-.shop_page {
-    padding-left: 2px;
-}
-
-.shop_page-now {
-    color: #fff !important;
-    background-color: #000;
-}
-
-.fa-chevron-right:before {
-    content: "\f054";
-}
-
-.fas {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-} */
-
-
 /* Máy tính bảng */
 
 .content_tablet {
@@ -969,46 +1111,7 @@ sup {
     margin-top: 185px;
 }
 
-.content_phukien_box {
-    max-width: 1080px;
-    margin: 0 auto;
-    height: 100%;
-    padding-top: 50px;
-}
 
-.content_phukien_title {
-    font-weight: 600;
-    font-size: 19px;
-    color: rgb(27, 27, 27);
-}
-
-.content_phukien_main {
-    display: flex;
-    margin-top: 20px;
-}
-
-.content_phukien_items {
-    margin: 0 10px;
-}
-
-.content_phukien_items_img {
-    display: flex;
-    justify-content: center;
-}
-
-.content_header_items_des {
-    margin-top: 10px;
-    text-align: center;
-    width: 101px;
-}
-
-.content_phukien_items_img img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 50%;
-    background: linear-gradient(90deg,#6ac1ff 0%,#8bfffe 100%);
-}
 /* Máy cũ giá rẽ */
 
 .content_oldphone {
@@ -1021,206 +1124,7 @@ sup {
 /* Liên Hê */
 
 .content_contact {
-    height: 350px;
+    background: pink;
+    height: 500px;
     display: none;
-    margin-top: 185px;
-}
-
-.lienhe_top-box {
-    padding-top: 100px;
-    background-color: rgb(246, 246, 246);
-    padding-bottom: 100px;
-}
-
-.lienhe_top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: max-content;
-    margin: auto;
-}
-
-.lienhe_connect-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #000;
-}
-
-.lienhe_connect-title span {
-    display: block;
-}
-
-.lienhe_connect-icon-box {
-    display: flex;
-    width: max-content;
-    margin: auto;
-    padding-top: 50px;
-}
-
-.lienhe_connect-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    border-radius: 50%;
-    margin: 0 3px;
-    cursor: pointer;
-    position: relative;
-}
-
-.lienheFB {
-    background-color: rgb(58, 88, 157);
-    transition: all 0.3s ease;
-}
-
-.lienheFB:hover {
-    background-color: rgb(25, 54, 121);
-}
-
-.lienheFB i,
-.lienheIT i,
-.lienheTW i,
-.lienhePH i,
-.lienheYT i {
-    color: #fff;
-}
-
-.lienheIT {
-    background-color: rgb(243, 76, 15);
-    transition: all 0.3s ease;
-}
-
-.lienheIT:hover {
-    background-color: rgb(237, 120, 30);
-}
-
-.lienheTW {
-    background-color: rgb(36, 120, 186);
-    transition: all 0.3s ease;
-}
-
-.lienheTW:hover {
-    background-color: rgb(25, 54, 121);
-}
-
-.lienhePH {
-    background-color: rgb(81, 203, 90);
-    transition: all 0.3s ease;
-}
-
-.lienhePH:hover {
-    background-color: rgb(29, 233, 104);
-}
-
-.lienheYT {
-    background-color: rgb(195, 50, 35);
-    transition: all 0.3s ease;
-}
-
-.lienheYT:hover {
-    background-color: rgb(208, 12, 12);
-}
-
-.lienhe_mix {
-    max-width: max-content;
-    margin: auto;
-    display: flex;
-    margin-top: -63px;
-}
-
-.lienhe_mid-items:first-child {
-    padding-right: 40px;
-}
-
-.lienhe_mix-items {
-    margin: 0 15px;
-}
-
-.lienhe_mix-img img {
-    width: 380px;
-    height: 250px;
-}
-
-.lienhe_mix-city {
-    padding-top: 20px;
-    font-size: 15px;
-    font-weight: 700;
-    color: rgb(104, 104, 104);
-    letter-spacing: 0.7px;
-}
-
-.lienhe_mix-street {
-    padding-top: 8px;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.lienhe_mix-district {
-    font-size: 14px;
-    padding-top: 7px;
-    color: rgb(34, 34, 34);
-}
-
-.lienhe_mix-phone {
-    font-size: 14px;
-    padding-top: 20px;
-    color: rgb(34, 34, 34);
-}
-
-.lienhe_mix-email {
-    font-size: 14px;
-    padding-top: 5px;
-    color: rgb(34, 34, 34);
-}
-
-.lienhe_mix-city,
-.lienhe_mix-street,
-.lienhe_mix-district,
-.lienhe_mix-phone,
-.lienhe_mix-email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lienhe_bottom {
-    max-width: max-content;
-    margin: auto;
-    padding-top: 70px;
-}
-
-.lienhe_bottom-title {
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.lienhe_bottom-title span {
-    padding: 0 10px;
-}
-
-hr {
-    margin: 0;
-}
-
-.lienhe_bottom-title hr {
-    height: 2px;
-    flex: 1;
-    width: 250px;
-}
-
-hr .lienhe_hr {
-    border: 1px solid rgb(231, 231, 231);
-}
-
-.lienhe_map {
-    padding-top: 20px;
-}
-
-.lienhe_map iframe {
-    width: 100%;
-    height: 450px;
 }
