@@ -878,6 +878,8 @@ option {
     display: block;
 }
 
+
+
 .dt {
     flex: 0 0 33.33333%;
     max-width: 33.33333%;
@@ -888,6 +890,12 @@ option {
 .dti {
     flex: 0 0 50%;
     max-width: 50%;
+}
+
+.ddt {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: block;
 }
 
 .product_selling-box {
@@ -1158,7 +1166,22 @@ sup {
     height: 350px;
     display: none;
     margin-top: 185px;
+
 }
+
+.content_oldphone-box {
+    margin-top: 50px;
+}
+
+.content_oldphone-title { 
+    padding-top: 70px;
+    margin-left: 22px;    
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+
 
 /* Liên Hê */
 
