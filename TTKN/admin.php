@@ -15,7 +15,7 @@
     <div class="header">
         <div class="header_top">
             <div class="header_right">
-                <span class="header_ma">NHẬP MÃ TTKN ĐỂ GIẢM 10%</span>
+                <span class="header_ma">NHẬP MÃ TTKN ĐỂ GIẢM 20%</span>
             </div>
             <div class="header_logo">
                 <a class="header_phone">
