@@ -1,0 +1,1131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.grid.wide {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+.header {
+    position: relative;
+}
+
+.header_top {
+    height: 40px;
+    background-color: black;
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.header_right {
+    width: 50%;
+    line-height: 40px;
+}
+
+.header_ma {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 150px;
+}
+
+.header_logo {
+    list-style: none;
+    line-height: 40px;
+    width: 50%;
+    margin-left: 36%;
+}
+
+.header_phone {
+    margin: 0 17px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.header_icon {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.header_facebook {
+    background-color: rgb(58 88 157);
+    padding: 5px 6px 5px 11px;
+}
+
+.header_instagram {
+    background-color: #cb2950;
+    padding: 5px 4px 5px 7px;
+}
+
+.header_twitter {
+    background-color: #2478ba;
+    padding: 5px 2px 5px 7px;
+}
+
+.header_youtube {
+    color: red;
+    background-color: white;
+    padding: 5px 6px 5px 6px;
+}
+
+.header_logo_img {
+    background-color: white;
+    display: flex;
+    height: 85px;
+    padding-top: 2px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 40px;
+    z-index: 10;
+}
+
+.header_logo_TTKN {
+    width: 80px;
+    margin-left: 200px;
+}
+
+.header_search {
+    background-color: rgb(245 245 245);
+    height: 35px;
+    margin-left: 103px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.header_search_input {
+    background-color: rgb(245 245 245);
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.header_search_icon {
+    height: 35px;
+    outline: none;
+    border: none;
+    margin-left: 173px;
+    background-color: rgb(245 245 245);
+    cursor: pointer;
+    color: black;
+}
+
+.header_search_icon_color {
+    color: black;
+}
+
+.header_cart {
+    margin-left: 70px;
+    margin-top: 18px;
+}
+
+.header_cart_text {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 30px;
+    color: #000;
+}
+
+.header_cart_logo {
+    font-size: 30px;
+    margin-left: 10px;
+    color: #000;
+}
+
+.header_login {
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.header_login_text {
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 15px;
+    color: black;
+    background-color: transparent;
+    border: none;
+}
+
+.header_login_text:hover {
+    cursor: pointer;
+}
+
+.header_home_text span {
+    color: #777;
+}
+
+.header_home_text span:hover {
+    color: #000;
+}
+
+.header_home_text:hover {
+    cursor: pointer;
+}
+
+#home {
+    color: #000;
+}
+
+.header_home {
+    background-color: white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 125px;
+    z-index: 10;
+}
+
+.header_home_text {
+    color: black;
+    height: 60px;
+    padding-top: 20px;
+    padding-left: 30px;
+    font-weight: 550;
+    padding-right: 30px;
+}
+
+.content_home {
+    position: relative;
+}
+
+.content_img {
+    height: 560px;
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/slider8-3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-top: 185px;
+    position: relative;
+}
+
+.content_heading span {
+    color: #fff;
+    display: block;
+}
+
+.content_heading {
+    position: absolute;
+    top: 140px;
+    left: 150px;
+}
+
+.content_sinhnhat {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.content_apple {
+    margin-top: 20px;
+    font-size: 58px;
+    font-weight: 700;
+}
+
+.content_sale {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.content_xemngay {
+    color: #fff;
+    margin-top: 15px;
+}
+
+.btn_xemngay {
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding: 8px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.content_down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    font-size: 22px;
+    color: rgb(243, 242, 242);
+}
+
+.content_img_body {
+    display: flex;
+    margin: 60px 200px 0px;
+}
+
+.content_img_1 {
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/product-10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 54%;
+    height: 180px;
+    position: relative;
+    width: 33.33333%;
+    background-color: rgb(0, 0, 0);
+    border: 8px solid;
+    margin: 0px 20px;
+}
+
+.content_img_2 {
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/banner-3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 54%;
+    height: 180px;
+    position: relative;
+    width: 33.33333%;
+    background-color: rgb(0, 0, 0);
+    border: 8px solid;
+    margin: 0px 20px;
+}
+
+.content_img_3 {
+    background-image: url(https://tonycongmmo.com/wp-content/uploads/2020/09/hero-1-1024x306.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 54%;
+    height: 180px;
+    position: relative;
+    width: 33.33333%;
+    background-color: rgb(0, 0, 0);
+    border: 8px solid;
+    margin: 0px 20px;
+}
+
+.content_bgr {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.788);
+    opacity: 0.4;
+}
+
+.content_img_heading {
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
+
+.content_img_heading span {
+    display: block;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* ------------ */
+
+.content_sanpham {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.content_sanphamhot {
+    display: flex;
+    align-items: center;
+    padding: 80px 0 0;
+}
+
+.content_sanphamhot span {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+.content_sanphamhot hr {
+    flex: 1;
+    height: 2px;
+}
+
+hr {
+    margin: 0;
+}
+
+
+/* -------------------- */
+
+.content_phone_main {
+    margin-top: 40px !important;
+    display: flex;
+}
+
+.content_phone_items {
+    width: 25%;
+}
+
+.content_phone_selling_img {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.content_phone_img {
+    width: 100%;
+}
+
+.content_phone_selling_img a img {
+    width: 252px;
+    height: 252px;
+    object-fit: cover;
+}
+
+.content_phone_price {
+    display: flex;
+    justify-content: center;
+}
+
+.content_phone_price_old {
+    text-decoration: line-through;
+    font-size: 14px;
+    color: rgb(117, 117, 117);
+    margin-right: 9px;
+    margin-top: 2px;
+}
+
+.content_phone_price_now {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.content_phone_selling_img:hover .content_phone_btn {
+    bottom: 14%;
+}
+
+.content_phone_name span {
+    display: block;
+}
+
+.content_phone_cart {
+    DISPLAY: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.content_phone_btn {
+    border-radius: 0;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+}
+
+.btn {
+    height: 36px;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--white-color-);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-color-);
+    cursor: pointer;
+}
+
+.content_phone_name span {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.content_phone_info {
+    padding-top: 20px
+}
+
+.content_phone_cart_btn {
+    text-decoration: none;
+    color: #777;
+}
+
+.content_phone_cart_btn_add {
+    border: 2px solid #000;
+    padding: 6px 12px 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+/*  ------------------*/
+
+.content_giamgia {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.content_giamgiasoc {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.content_giamgiasoc span {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+.content_giamgiasoc hr {
+    flex: 1;
+    height: 2px;
+}
+
+hr {
+    margin: 0;
+}
+
+
+/* giao hàng toàn quốc */
+
+.content_chinhsach {
+    margin-top: 50px;
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+}
+
+.content_baohanh {
+    width: 33, 33333%;
+}
+
+.content_baohanh_icon {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    padding: 20px;
+    color: #626161;
+}
+
+.content_giaohang {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.content_giaohangCOD {
+    text-align: center;
+    color: #606060;
+    max-width: 90%;
+}
+
+
+/* -----------bản quyền----------- */
+
+.content_footer_background {
+    background-color: #000;
+    margin-top: 40px;
+}
+
+.content_footer_contenner {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer {
+    width: 25%;
+}
+
+.content_footer_heading {
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-1 {
+    color: #fff;
+    padding: 0 12px;
+    margin-top: 30px;
+}
+
+.footer-items {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.footer_title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 17px;
+    display: block;
+    padding: 10px 0px;
+}
+
+.footer_gioithieu {
+    line-height: 24px;
+}
+
+.footer_title hr {
+    width: 100px;
+    height: 5px;
+    margin-top: 15px;
+    background-color: rgb(255 255 255 / 30%);
+    border: none;
+}
+
+hr {
+    margin: 0;
+}
+
+.footer_combo {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.footer_combo_box {
+    display: inline-flex;
+}
+
+.footer_combo_box img {
+    width: 70;
+    height: 70px;
+}
+
+.footer_combo_heading {
+    width: 75%;
+    padding-left: 20px;
+}
+
+.footer_combo_money {
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.footer_info {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0 12px;
+}
+
+.footer_infoo,
+.footer_address {
+    padding: 8px 0 12px;
+}
+
+
+/* Begin Modal Register */
+
+.modal-register.open {
+    display: flex;
+}
+
+.modal-login.open {
+    display: flex;
+}
+
+.modal-register,
+.modal-login {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginmain {
+    width: 450px;
+    min-height: 580px;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    position: relative;
+    animation: modalLoginFadeIn ease .5s;
+}
+
+.center {
+    text-align: center;
+}
+
+.logincontent {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding-top: 40px;
+    background-color: #ffffffb3;
+    box-shadow: 0 0 10px rgb(0 0 0 / 100%);
+}
+
+.loginheading-sub {
+    color: rgb(114, 114, 114);
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.logininput {
+    margin-top: 58px;
+}
+
+.loginrow {
+    padding-left: 16px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.loginrow p {
+    margin-bottom: 0;
+    padding-bottom: 8px;
+    font-weight: 550;
+}
+
+.loginrow a {
+    padding-left: 275px;
+    color: blue;
+}
+
+.padding-top-20 {
+    padding-top: 20px;
+}
+
+input {
+    padding: 8px;
+    width: 93%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.loginbton {
+    margin-top: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #00CED1;
+    font-weight: 550;
+    width: 93%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+}
+
+.loginbtnton {
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #00CED1;
+    font-weight: 550;
+    width: 93%;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+}
+
+.loginbton:hover,
+.loginbtnton:hover {
+    background-color: #00b6b9;
+    cursor: pointer;
+}
+
+.loginbton:active,
+.loginbtnton:active {
+    background-color: #764597;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+@keyframes modalLoginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* End Modal Register */
+
+
+/* Bắt đầu code điện thoại */
+
+.content_phone {
+    height: 350px;
+    display: none;
+    margin-top: 185px;
+}
+
+.shop-big-img {
+    background-image: url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow1.png), url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow2.png);
+    height: 100%;
+    animation: rain 20s linear infinite;
+    background-color: #000;
+}
+
+@keyframes rain {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 500px 1000px;
+    }
+}
+
+.shop_introducing {
+    padding-top: 25px;
+}
+
+iframe {
+    width: 230px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
+.content_tablet-body {
+    padding-top: 35px;
+}
+
+.shop_sanpham {
+    display: block;
+}
+
+.shop_sanpham-title {
+    display: block;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+}
+
+.col {
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.shop_tongsanpham {
+    height: 45px;
+    border: none;
+    box-shadow: 1px 1px 11px 1px #d3d3d3;
+    border-radius: 2px;
+    outline: none;
+    font-size: 16px;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+.danhmuc {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: block;
+}
+
+.sanpham {
+    flex: 0 0 75%;
+    max-width: 75%;
+    display: block;
+}
+
+.dt {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    display: block;
+    padding-top: 25px;
+}
+
+.dti {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.product_selling-box {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.product_selling-box a img {
+    width: 252px;
+    height: 252px;
+    object-fit: cover;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+.product_selling-box:hover .product_selling-btn {
+    bottom: 14%;
+}
+
+.btn {
+    height: 36px;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.product_selling-btn {
+    border-radius: 0;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    background-color: #000;
+}
+
+.product_selling-info {
+    padding-top: 20px;
+}
+
+.product_selling-name {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    min-height: 40px;
+}
+
+.product_selling-price {
+    display: flex;
+    justify-content: center;
+}
+
+.produc_selling-old {
+    text-decoration: line-through;
+    font-size: 14px;
+    color: rgb(117, 117, 117);
+    margin-right: 9px;
+    margin-top: 2px;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.produc_selling-now {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.btn_add {
+    DISPLAY: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.btn_add-cart {
+    border: 2px solid #000;
+    padding: 6px 12px 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn_add-cart:hover {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid;
+}
+
+
+/* Máy tính bảng */
+
+.content_tablet {
+    height: 350px;
+    display: none;
+    margin-top: 185px;
+}
+
+.content_tablet-header {
+    background-color: #000;
+    width: 100%;
+    height: 366px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.content_tablet-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_tablet-content-header {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.content_tablet-content-main {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.content_tablet-content-end {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.content_tablet-content-header,
+.content_tablet-content-main,
+.content_tablet-content-end {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.content_tablet-body {
+    padding-top: 35px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    height: 100%;
+}
+
+.shop_danhmuc-header span {
+    font-weight: 700;
+    padding-top: 2px;
+}
+
+.shop_NSX-header {
+    padding-top: 45px;
+}
+
+.shop_NSX-title {
+    font-weight: 700;
+    position: relative;
+}
+
+.shop_NSX-title::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: #ebe9e9;
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+}
+
+.shop_NSX-item-box {
+    padding-top: 10px;
+}
+
+.shop_NSX-list {
+    margin-top: 17px;
+}
+
+.shop_NSX-list a span {
+    color: #000;
+    padding: 5px 20px;
+    width: max-content;
+    border: 1px solid #e0dede;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.shop_NSX-a {
+    text-decoration: none;
+    color: #777;
+    display: block;
+    margin: 20px 0;
+}
+
+
+/* Phụ kiện */
+
+.content_phukien {
+    height: 350px;
+    display: none;
+    margin-top: 185px;
+}
+
+
+/* Máy cũ giá rẽ */
+
+.content_oldphone {
+    background: cyan;
+    height: 500px;
+    display: none;
+}
+
+
+/* Liên Hê */
+
+.content_contact {
+    background: pink;
+    height: 500px;
+    display: none;
+}
