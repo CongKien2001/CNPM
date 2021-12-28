@@ -982,10 +982,6 @@ sup {
     color: rgb(27, 27, 27);
 }
 
-span {
-    display: block;
-}
-
 .content_phukien_main {
     display: flex;
     margin-top: 20px;
