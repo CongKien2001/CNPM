@@ -127,7 +127,7 @@
     height: 35px;
     outline: none;
     border: none;
-    margin-left: 173px;
+    margin-left: -25px;
     background-color: rgb(245 245 245);
     cursor: pointer;
     color: black;
@@ -1112,20 +1112,258 @@ sup {
     margin-top: 185px;
 }
 
+.content_phukien_box {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 50px;
+}
 
+.content_phukien_title {
+    font-weight: 600;
+    font-size: 19px;
+    color: rgb(27, 27, 27);
+}
+
+.content_phukien_main {
+    display: flex;
+    margin-top: 20px;
+}
+
+.content_phukien_items {
+    margin: 0 10px;
+}
+
+.content_phukien_items_img {
+    display: flex;
+    justify-content: center;
+}
+
+.content_header_items_des {
+    margin-top: 10px;
+    text-align: center;
+    width: 101px;
+}
+
+.content_phukien_items_img img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: linear-gradient(90deg,#6ac1ff 0%,#8bfffe 100%);
+}
 /* Máy cũ giá rẽ */
 
 .content_oldphone {
-    background: cyan;
-    height: 500px;
+    height: 350px;
     display: none;
+    margin-top: 185px;
 }
-
 
 /* Liên Hê */
 
 .content_contact {
-    background: pink;
-    height: 500px;
+    height: 350px;
     display: none;
+    margin-top: 185px;
 }
+
+.lienhe_top-box {
+    padding-top: 100px;
+    background-color: rgb(246, 246, 246);
+    padding-bottom: 100px;
+}
+
+.lienhe_top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+    margin: auto;
+}
+
+.lienhe_connect-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+}
+
+.lienhe_connect-title span {
+    display: block;
+}
+
+.lienhe_connect-icon-box {
+    display: flex;
+    width: max-content;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.lienhe_connect-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 50%;
+    margin: 0 3px;
+    cursor: pointer;
+    position: relative;
+}
+
+.lienheFB {
+    background-color: rgb(58, 88, 157);
+    transition: all 0.3s ease;
+}
+
+.lienheFB:hover {
+    background-color: rgb(25, 54, 121);
+}
+
+.lienheFB i,
+.lienheIT i,
+.lienheTW i,
+.lienhePH i,
+.lienheYT i {
+    color: #fff;
+}
+
+.lienheIT {
+    background-color: rgb(243, 76, 15);
+    transition: all 0.3s ease;
+}
+
+.lienheIT:hover {
+    background-color: rgb(237, 120, 30);
+}
+
+.lienheTW {
+    background-color: rgb(36, 120, 186);
+    transition: all 0.3s ease;
+}
+
+.lienheTW:hover {
+    background-color: rgb(25, 54, 121);
+}
+
+.lienhePH {
+    background-color: rgb(81, 203, 90);
+    transition: all 0.3s ease;
+}
+
+.lienhePH:hover {
+    background-color: rgb(29, 233, 104);
+}
+
+.lienheYT {
+    background-color: rgb(195, 50, 35);
+    transition: all 0.3s ease;
+}
+
+.lienheYT:hover {
+    background-color: rgb(208, 12, 12);
+}
+
+.lienhe_mix {
+    max-width: max-content;
+    margin: auto;
+    display: flex;
+    margin-top: -63px;
+}
+
+.lienhe_mid-items:first-child {
+    padding-right: 40px;
+}
+
+.lienhe_mix-items {
+    margin: 0 15px;
+}
+
+.lienhe_mix-img img {
+    width: 380px;
+    height: 250px;
+}
+
+.lienhe_mix-city {
+    padding-top: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(104, 104, 104);
+    letter-spacing: 0.7px;
+}
+
+.lienhe_mix-street {
+    padding-top: 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.lienhe_mix-district {
+    font-size: 14px;
+    padding-top: 7px;
+    color: rgb(34, 34, 34);
+}
+
+.lienhe_mix-phone {
+    font-size: 14px;
+    padding-top: 20px;
+    color: rgb(34, 34, 34);
+}
+
+.lienhe_mix-email {
+    font-size: 14px;
+    padding-top: 5px;
+    color: rgb(34, 34, 34);
+}
+
+.lienhe_mix-city,
+.lienhe_mix-street,
+.lienhe_mix-district,
+.lienhe_mix-phone,
+.lienhe_mix-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lienhe_bottom {
+    max-width: max-content;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.lienhe_bottom-title {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.lienhe_bottom-title span {
+    padding: 0 10px;
+}
+
+hr {
+    margin: 0;
+}
+
+.lienhe_bottom-title hr {
+    height: 2px;
+    flex: 1;
+    width: 250px;
+}
+
+hr .lienhe_hr {
+    border: 1px solid rgb(231, 231, 231);
+}
+
+.lienhe_map {
+    padding-top: 20px;
+}
+
+.lienhe_map iframe {
+    width: 100%;
+    height: 450px;
+}
+
