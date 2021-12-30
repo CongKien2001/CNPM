@@ -5,6 +5,12 @@ var phukien = document.getElementById('phukien');
 var oldphone = document.getElementById('oldphone');
 var contact = document.getElementById('contact');
 var giohang = document.getElementById('giohang');
+var IP = document.getElementById('IP');
+var SA = document.getElementById('SA');
+var VI = document.getElementById('VI');
+var XI = document.getElementById('XI');
+var OP = document.getElementById('OP');
+var RE = document.getElementById('RE');
 
 var OnclickHome = document.querySelector('.content_home');
 var OnclickPhone = document.querySelector('.content_phone');
@@ -13,8 +19,72 @@ var OnclickPhuKien = document.querySelector('.content_phukien');
 var OnclickOldPhone = document.querySelector('.content_oldphone');
 var OnclickContact = document.querySelector('.content_contact');
 var OnclickGioHang = document.querySelector('.content_giohang');
+var OnclickIphone = document.querySelector('.DTIphone');
+var OnclickSamsung = document.querySelector('.DTSamsung');
+var OnclickVivo = document.querySelector('.DTVivo');
+var OnclickXiaomi = document.querySelector('.DTXiaomi');
+var OnclickOppo = document.querySelector('.DTOppo');
+var OnclickRealme = document.querySelector('.DTRealme');
 
+IP.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'block';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
 
+SA.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'block';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
+
+VI.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'block';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
+
+XI.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'block';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
+
+OP.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'block';
+    OnclickRealme.style.display = 'none';
+}
+
+RE.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'block';
+}
 home.onclick = function() {
     OnclickHome.style.display = 'block';
     OnclickPhone.style.display = 'none';

@@ -1113,6 +1113,7 @@ sup {
     color: #777;
     display: block;
     margin: 20px 0;
+    cursor: pointer;
 }
 
 
@@ -1479,6 +1480,7 @@ hr .lienhe_hr {
 
 .cart_phone {
     display: none;
+    position: relative;
 }
 
 form {
@@ -1513,3 +1515,16 @@ form {
     display: block;
 }
 
+.cart_list {
+    position: relative;
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-top: 35px;
+}
+
+.cart_product {
+    
+    width: 270px;
+    
+}
