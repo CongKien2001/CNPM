@@ -24,7 +24,7 @@
         if(mysqli_num_rows($user) > 0){
             $_SESSION["username"] = $username;
             $_SESSION["level"] = $row["level"];
-            echo "<script language='javascript'>alert('Đăng nhập thành công!  Hãy tạo Playlist riêng cho mình');";
+            echo "<script language='javascript'>alert('Đăng nhập thành công!');";
             echo "</script>";
             
             if($_SESSION["level"]==1){
