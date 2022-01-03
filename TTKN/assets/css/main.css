@@ -1129,13 +1129,19 @@ sup {
     cursor: pointer;
 }
 
+.shop_NSX-a span:hover {
+    color: #000;
+}
+
 .shop_NSX-b {
     text-decoration: none;
     color: #777;
     display: block;
     cursor: pointer;
 }
-
+.shop_NSX-b span:hover {
+    color: #000;
+}
 /* Phụ kiện */
 
 .content_phukien {
