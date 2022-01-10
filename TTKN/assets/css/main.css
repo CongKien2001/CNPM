@@ -1942,3 +1942,152 @@ form {
     max-width: 30%;
     display: block;
 }
+
+
+/* thanh toán */
+
+.content_thanhtoan {
+    display: flex;
+    width: 100%;
+}
+
+.content_inforpay_title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.content_inforpay_name {
+    display: flex;
+    margin-top: 20px;
+}
+
+.content_inforpay_name label {
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.content_inforpay_name span {
+    font-size: 18px;
+}
+
+.content_inforpay_phone {
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.content_inforpay_phone input {
+    width: 230px;
+    height: 45px;
+    outline: none;
+    border: 1px solid #ddd;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.content_inforpay_address {
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.content_inforpay_address>label {
+    font-weight: 600;
+}
+
+.content_inforpay_note {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.content_inforpay_note input {
+    display: block;
+    margin-left: 30px;
+    width: 412px;
+    margin-top: 15px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 80px;
+    font-size: 15px;
+}
+
+.your-order-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.pay_san_pham {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    border-bottom: 4px solid #eaeaee;
+    padding-bottom: 10px;
+}
+
+.pay_giao_hang {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eaeaee;
+}
+
+.pay_giao_hang {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.pay_giao_hang label {
+    padding-top: 5px;
+}
+
+.pay_giao_hang label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.phi-giao-hang {
+    display: flex;
+}
+
+.pay_total_money {
+    padding-bottom: 15px;
+    border-bottom: 3.5px solid #eaeaee;
+}
+
+.total_money {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.phuong-thuc-pay {
+    padding-top: 20px;
+}
+
+.phuong-thuc-pay-items-box {
+    border-bottom: 1px solid #eaeaee;
+}
+
+.phuong-thuc-pay-items {
+    display: flex;
+    padding: 8px 0;
+}
+
+.phuong-thuc-pay-items input {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.block {
+    transform: translateY(0);
+    height: max-content;
+    overflow: inherit;
+    padding-bottom: 5px;
+}
