@@ -2947,8 +2947,8 @@
                                     <span>Tổng tiền:</span>
                                 </div>
                             </div>
-                            <a href="" class="shop_NSX-a ">
-                                <div class="thanh-toan">
+                            <a style="text-decoration: none" id="thanhtoan" class="shop_NSX-a ">
+                                <div  class="thanh-toan">
                                     <span>TIẾN HÀNH THANH TOÁN</span>
                                 </div>
                             </a>
@@ -3056,6 +3056,216 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="content_thanhtoan">
+        <div class="content_giohang-box">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="form_pay">
+                        <div class="content_inforpay">
+                            <div class="content_inforpay_title">
+                                <span>
+                                    THÔNG TIN THANH TOÁN
+                                </span>
+                            </div>
+                            <div class="content_inforpay_name">
+                                <label for="">Tên người nhận:</label>
+                            </div>
+                            <div class="content_inforpay_phone">
+                                <label for="">Số điện thoại:</label>
+                                <input type="tel" required="true" name="phone_number">
+                            </div>
+                            <div class="content_inforpay_address">
+                                <label for="">Địa chỉ nhận hàng:</label>
+                            </div>
+                            <div class="content_inforpay_note">
+                                <label for="">Ghi chú:</label>
+                                <input type="text" placeholder="" name="pay_note">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_oder">
+                        <div class="content_inforoder">
+                            <div class="your-order-title">
+                                <span>ĐƠN HÀNG CỦA BẠN</span>
+                            </div>
+                            <div class="pay_san_pham">
+                                <span class="san-pham">SẢN PHẨM</span>
+                                <span class="tam-tinh2">TẠM TÍNH</span>
+                            </div>
+                            <div class="pay_giao_hang">
+                                <label for="">Giao hàng</label>
+                                <div class="phi-giao-hang"><span style="padding-top: 4px;padding-right:6px">Đồng giá:</span> <span style="font-weight: 600;">20.000<sup>đ</sup></span></div>
+                            </div>
+                            <div class="total_money pay_total_money">
+                                <div class="total_money-title">
+                                    <span style="font-size: 16px;">Tổng tiền:</span>
+                                </div>
+                                <div class="total-main" name="total-main">47,000,000<sup>đ</sup></div>
+                            </div>
+                            <div class="phuong-thuc-pay">
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a1">
+                                        <span>Thanh toán khi nhận hàng</span>
+                                    </div>
+                                    <div class="pay-box  abcd block" id="a1">
+                                        Trả tiền mặt khi giao hàng
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a2">
+                                        <span>Chuyển khoản ngân hàng</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a2">
+                                        Thực hiện thanh toán vào ngay tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng Mã đơn hàng của bạn trong phần Nội dung thanh toán. Đơn hàng sẽ đươc giao sau khi tiền đã chuyển.
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a3">
+                                        <span>Thanh toán với PayPal</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a3">
+                                        Trả thông qua Paypal; bạn có thể thanh toán với thẻ tín dụng nếu bạn không có tài khoản PayPal. Các giá sẽ được chuyển đổi sang USD ở trên trang của PayPal với tỷ giá USD / VND = 22770.
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a4">
+                                        <span>Quét mã MoMo</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a4">
+                                        Hãy mở App Momo lên và nhấn Đặt Hàng để quét mã thanh toán
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a5">
+                                        <span>Cổng thanh toán nội địa OnePay</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a5">
+                                        Với OnePay, bạn có thể thanh toán bằng bất cử thẻ ATM nội địa nào của Việt Nam.
+                                        <img src="./assets/img/nganhang.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a6">
+                                        <span>Cổng thanh toán Quốc tế OnePay</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a6">
+                                        Với OnePay, bạn có thể thanh toán sử dụng các thẻ quốc tế như Visa, Master, JCB, hay Amex.
+                                        <img style="width:100%;height:100px;object-fit:cover;" src="./assets/img/nganhang2.png" alt="">
+                                    </div>
+                                </div>
+                                <button type="submit" class="dat_hang">ĐẶT HÀNG</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+         <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                    ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
+        </div> 
     </div>
 
     <div class="modal-register">
