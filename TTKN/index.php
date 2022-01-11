@@ -2934,8 +2934,8 @@
                                     <span>Tổng tiền:</span>
                                 </div>
                             </div>
-                            <a href="" class="shop_NSX-a ">
-                                <div class="thanh-toan">
+                            <a style="text-decoration: none" id="thanhtoan" class="shop_NSX-a ">
+                                <div  class="thanh-toan">
                                     <span>TIẾN HÀNH THANH TOÁN</span>
                                 </div>
                             </a>
