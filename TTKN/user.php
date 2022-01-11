@@ -70,9 +70,9 @@
                 </a>
             </div>
             <div class="header_login">
-                <button class="header_login_text js-dangnhap js-logout">ĐĂNG XUẤT</button>
+                <button class="header_login_text user-name js-dangnhap js-logout">ĐĂNG XUẤT</button>
             </div>
-            <h2 class="user-name"><?php   echo $_SESSION["username"]?> <i class="fas fa-caret-down"></i></h2>
+            <h2 class="user-name header_login_text"><?php   echo $_SESSION["username"]?> <i class="fas fa-caret-down"></i></h2>
 
         </div>
 

@@ -161,9 +161,11 @@
 }
 
 .user-name {
-    margin-left: 100px;
+    margin-left: 10px;
     line-height: 85px;
+    margin-top: -3px;
 }
+
 
 .header_login_text {
     font-weight: 600;
