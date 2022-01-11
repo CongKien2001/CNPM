@@ -1,3 +1,18 @@
+<?php 
+    session_start();    
+    require("config.php");
+    $sql = "select * from signin";
+    $result=mysqli_query($conn , $sql);
+    $row = mysqli_fetch_assoc($result);
+    if(!isset($_SESSION["username"])){
+        echo "<script language='javascript'>alert('Bạn cần phải đăng nhập!');";
+        echo " location.href='index.php';</script>";
+    }
+    if($_SESSION["level"]!=1){
+        header("location: user.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,10 +70,10 @@
                 </a>
             </div>
             <div class="header_login">
-                <!-- <button class="header_login_text js-imglogin">ĐĂNG KÝ</button> -->
-                <button class="header_login_text js-dangnhap">ĐĂNG XUẤT</button>
-
+                <button class="header_login_text js-dangnhap js-logout">ĐĂNG XUẤT</button>
             </div>
+            <h2 class="user-name"><?php   echo $_SESSION["username"]?> <i class="fas fa-caret-down"></i></h2>
+
         </div>
 
         <div class="header_home">
@@ -166,7 +181,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -202,7 +217,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -237,7 +252,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -271,7 +286,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -306,7 +321,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -341,7 +356,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -376,7 +391,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -411,7 +426,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -455,7 +470,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -490,7 +505,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -525,7 +540,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -560,7 +575,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1509,7 +1524,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1543,7 +1558,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1577,7 +1592,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1611,7 +1626,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1652,7 +1667,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1685,7 +1700,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1718,7 +1733,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1751,7 +1766,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1792,7 +1807,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1826,7 +1841,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1860,7 +1875,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1894,7 +1909,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1935,7 +1950,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -1969,7 +1984,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -2003,7 +2018,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -2037,7 +2052,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -2078,7 +2093,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -2112,7 +2127,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -2146,7 +2161,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -2180,7 +2195,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -3105,7 +3120,27 @@
         </div>
     </div>
 
+    <div class="modal-logout">
+        <div class="logout">
+            <div class="logincontent">
+                <h2 class="loginheading center">Đăng xuất</h2>
+                <p class="songheading-sub center">Cùng nhau tận hưởng công nghệ
+                    <i class="fa fa-heartbeat"></i>
+                </p>
+                <form action="logout.php" method="POST" class="input">
+
+                    <div class="loginrow padding-top-20">
+                        <input type="submit" name="submit" value="Đăng xuất" class="loginbton">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/logout.js"></script>
     <script src="./assets/js/main.js"></script>
+
 </body>
 
 </html>
