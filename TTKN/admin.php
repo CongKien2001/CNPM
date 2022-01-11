@@ -2851,7 +2851,7 @@
     </div>
 
     <!------------------------------------->
-    <div class="content_giohang">
+    <!-- <div class="content_giohang">
         <div class="content_giohang-box">
             <div class="grid wide">
                 <div class="lienhe_bottom-box">
@@ -3056,9 +3056,9 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
-    <div class="content_thanhtoan">
+    <!-- <div class="content_thanhtoan">
         <div class="content_giohang-box">
             <div class="grid wide">
                 <div class="row">
@@ -3266,7 +3266,7 @@
                 <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
             </div>
         </div> 
-    </div>
+    </div>  -->
 
     <div class="modal-register">
         <div class="loginmain">
