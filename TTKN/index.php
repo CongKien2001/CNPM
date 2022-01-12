@@ -2883,29 +2883,6 @@
                                 </div> 
                             </form>
                         </div>
-            
-                        <!-- CART_MOBILE -->
-                        <!-- <div class="col dtt cart_mobile" style="position: relative;">
-                            <form action="" method="post">
-                                <div class="cart_table">
-                                        <div class="cart_table_header">  
-                                            <span class="">SẢN PHẨM</span>
-                                            <span>SỐ LƯỢNG</span>
-                                        </div>
-                                </div>
-                                <div class="cart_product_foot">
-                                    <a href="" class="shop_NSX-b">
-                                        <div class="continue_view">
-                                            <i class="fas fa-long-arrow-alt-left"></i>
-                                            <span>TIẾP TỤC XEM SẢN PHẨM</span>
-                                        </div>
-                                    </a>
-                                    <button type="submit" class="update_cart update_cart2 opacity">
-                                        <span style="padding-top: 3px;font-size:13px;">CẬP NHẬT GIỎ HÀNG</span>
-                                    </button>
-                                </div> 
-                            </form>
-                        </div> -->
                         <div class="col dt dtt cart_right">
                             <div class="cart_right-header">
                                 <span>CỘNG GIỎ HÀNG</span>
@@ -3045,7 +3022,7 @@
     
     </div>
 
-    <div class="content_thanhtoan">
+    <!-- <div class="content_thanhtoan">
         <div class="content_giohang-box">
             <div class="grid wide">
                 <div class="row">
@@ -3253,7 +3230,7 @@
                 <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
             </div>
         </div> 
-    </div>
+    </div> -->
 
     <div class="modal-register">
         <div class="loginmain">
