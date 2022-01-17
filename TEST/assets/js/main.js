@@ -4,6 +4,15 @@ var tablet = document.getElementById('tablet');
 var phukien = document.getElementById('phukien');
 var oldphone = document.getElementById('oldphone');
 var contact = document.getElementById('contact');
+var giohang = document.getElementById('giohang');
+var thanhtoan = document.getElementById('thanhtoan');
+
+var IP = document.getElementById('IP');
+var SA = document.getElementById('SA');
+var VI = document.getElementById('VI');
+var XI = document.getElementById('XI');
+var OP = document.getElementById('OP');
+var RE = document.getElementById('RE');
 
 var OnclickHome = document.querySelector('.content_home');
 var OnclickPhone = document.querySelector('.content_phone');
@@ -11,8 +20,76 @@ var OnclickTablet = document.querySelector('.content_tablet');
 var OnclickPhuKien = document.querySelector('.content_phukien');
 var OnclickOldPhone = document.querySelector('.content_oldphone');
 var OnclickContact = document.querySelector('.content_contact');
+var OnclickGioHang = document.querySelector('.content_giohang');
+var OnclickThanhToan = document.querySelector('.content_thanhtoan');
 
 
+var OnclickIphone = document.querySelector('.Iphone');
+var OnclickSamsung = document.querySelector('.Samsung');
+var OnclickVivo = document.querySelector('.Vivo');
+var OnclickXiaomi = document.querySelector('.Xiaomi');
+var OnclickOppo = document.querySelector('.Oppo');
+var OnclickRealme = document.querySelector('.Realme');
+
+IP.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'block';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
+
+SA.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'block';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
+
+VI.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'block';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
+
+XI.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'block';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'none';
+}
+
+OP.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'block';
+    OnclickRealme.style.display = 'none';
+}
+
+RE.onclick = function() {
+    OnclickPhone.style.display = 'block';
+    OnclickIphone.style.display = 'none';
+    OnclickSamsung.style.display = 'none';
+    OnclickVivo.style.display = 'none';
+    OnclickXiaomi.style.display = 'none';
+    OnclickOppo.style.display = 'none';
+    OnclickRealme.style.display = 'block';
+}
 home.onclick = function() {
     OnclickHome.style.display = 'block';
     OnclickPhone.style.display = 'none';
@@ -20,6 +97,7 @@ home.onclick = function() {
     OnclickPhuKien.style.display = 'none';
     OnclickOldPhone.style.display = 'none';
     OnclickContact.style.display = 'none';
+    OnclickGioHang.style.display = 'none';
 }
 
 phone.onclick = function() {
@@ -29,6 +107,7 @@ phone.onclick = function() {
     OnclickPhuKien.style.display = 'none';
     OnclickOldPhone.style.display = 'none';
     OnclickContact.style.display = 'none';
+    OnclickGioHang.style.display = 'none';
 }
 
 tablet.onclick = function() {
@@ -38,6 +117,7 @@ tablet.onclick = function() {
     OnclickPhuKien.style.display = 'none';
     OnclickOldPhone.style.display = 'none';
     OnclickContact.style.display = 'none';
+    OnclickGioHang.style.display = 'none';
 }
 
 phukien.onclick = function() {
@@ -47,6 +127,7 @@ phukien.onclick = function() {
     OnclickPhuKien.style.display = 'block';
     OnclickOldPhone.style.display = 'none';
     OnclickContact.style.display = 'none';
+    OnclickGioHang.style.display = 'none';
 }
 
 oldphone.onclick = function() {
@@ -56,6 +137,7 @@ oldphone.onclick = function() {
     OnclickPhuKien.style.display = 'none';
     OnclickOldPhone.style.display = 'block';
     OnclickContact.style.display = 'none';
+    OnclickGioHang.style.display = 'none';
 }
 
 contact.onclick = function() {
@@ -65,7 +147,30 @@ contact.onclick = function() {
     OnclickPhuKien.style.display = 'none';
     OnclickOldPhone.style.display = 'none';
     OnclickContact.style.display = 'block';
+    OnclickGioHang.style.display = 'none';
 }
+
+giohang.onclick = function() {
+    OnclickHome.style.display = 'none';
+    OnclickPhone.style.display = 'none';
+    OnclickTablet.style.display = 'none';
+    OnclickPhuKien.style.display = 'none';
+    OnclickOldPhone.style.display = 'none';
+    OnclickContact.style.display = 'none';
+    OnclickGioHang.style.display = 'block';
+}
+
+thanhtoan.onclick = function() {
+    OnclickThanhToan.style.display = 'block';
+    OnclickHome.style.display = 'none';
+    OnclickPhone.style.display = 'none';
+    OnclickTablet.style.display = 'none';
+    OnclickPhuKien.style.display = 'none';
+    OnclickOldPhone.style.display = 'none';
+    OnclickContact.style.display = 'none';
+    OnclickGioHang.style.display = 'none';
+}
+
 
 // Modal Register
 const imgLogins = document.querySelector('.js-imglogin');
