@@ -161,11 +161,9 @@
 }
 
 .user-name {
-    margin-left: 10px;
+    margin-left: 100px;
     line-height: 85px;
-    margin-top: -3px;
 }
-
 
 .header_login_text {
     font-weight: 600;
@@ -390,6 +388,7 @@ hr {
 .content_phone_main {
     margin-top: 40px !important;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .content_phone_items {
@@ -679,6 +678,11 @@ hr {
     display: flex;
 }
 
+.modal-upload.open {
+    display: flex;
+}
+
+.modal-upload,
 .modal-register,
 .modal-login,
 .modal-logout {
@@ -710,6 +714,106 @@ hr {
     background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     position: relative;
     animation: modalLoginFadeIn ease .5s;
+}
+
+.songmain {
+    width: 750px;
+    min-height: 630px;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    position: relative;
+    animation: modalLoginFadeIn ease .5s;
+    margin: auto;
+    box-shadow: 0 0 10px rgb(0 0 0);
+}
+
+.song-update {
+    margin-top: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+.songcontent {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding-top: 40px;
+    background-color: #ffffffb3;
+    box-shadow: 0 0 10px rgb(0 0 0 / 100%);
+}
+
+.songheading-sub {
+    color: rgb(114, 114, 114);
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.songinput {
+    margin-top: 58px;
+}
+
+.songrow {
+    padding-left: 16px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.songrow p {
+    margin-bottom: 0;
+    padding-bottom: 8px;
+    font-weight: 550;
+}
+
+.songrow a {
+    padding-left: 275px;
+    color: blue;
+}
+
+.songrow .song-delete {
+    padding-left: 0;
+    color: blue;
+}
+
+.songsubmit {
+    width: 70%;
+    padding-left: 28%;
+}
+
+.padding-top-20 {
+    padding-top: 20px;
+}
+
+input {
+    padding: 8px;
+    width: 93%;
+    border: 2px solid #ddd;
+}
+
+.songbton {
+    margin-top: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #00CED1;
+    font-weight: 550;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+}
+
+.songbton:hover {
+    background-color: #00b6b9;
+    cursor: pointer;
+}
+
+.songbton:active {
+    background-color: #764597;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
 }
 
 .center {
@@ -1282,6 +1386,7 @@ sup {
     max-width: 1080px;
     margin: 0 auto;
     height: 100%;
+    flex-wrap: wrap;
 }
 
 
@@ -2026,166 +2131,4 @@ td.cart_body {
     flex: 0 0 30%;
     max-width: 30%;
     display: block;
-}
-
-
-/* thanh toán */
-
-.content_thanhtoan {
-    height: 350px;
-    display: none;
-    margin-top: 185px;
-}
-
-.form_pay {
-    flex: 0 0 50%;
-    max-width: 50%;
-    display: block;
-}
-
-.form_oder {
-    flex: 0 0 50%;
-    max-width: 50%;
-    display: block;
-}
-
-.content_inforpay_title {
-    font-size: 18px;
-    font-weight: 700;
-    padding-bottom: 15px;
-}
-
-.content_inforpay_name {
-    display: flex;
-    margin-top: 20px;
-}
-
-.content_inforpay_name label {
-    font-size: 15px;
-    margin-right: 10px;
-    font-weight: 600;
-}
-
-.content_inforpay_name span {
-    font-size: 18px;
-}
-
-.content_inforpay_phone {
-    font-size: 15px;
-    margin-right: 10px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-.content_inforpay_phone input {
-    width: 230px;
-    height: 45px;
-    outline: none;
-    border: 1px solid #ddd;
-    padding-left: 20px;
-    font-size: 15px;
-}
-
-.content_inforpay_address {
-    font-size: 15px;
-    margin-right: 10px;
-    margin-top: 20px;
-}
-
-.content_inforpay_address>label {
-    font-weight: 600;
-}
-
-.content_inforpay_note {
-    font-size: 15px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-.content_inforpay_note input {
-    display: block;
-    margin-left: 30px;
-    width: 412px;
-    margin-top: 15px;
-    outline: none;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 80px;
-    font-size: 15px;
-}
-
-.your-order-title {
-    font-size: 18px;
-    font-weight: 700;
-    padding-bottom: 15px;
-}
-
-.pay_san_pham {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    font-size: 14px;
-    border-bottom: 4px solid #eaeaee;
-    padding-bottom: 10px;
-}
-
-.pay_giao_hang {
-    padding-bottom: 15px;
-    border-bottom: 2px solid #eaeaee;
-}
-
-.pay_giao_hang {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-}
-
-.pay_giao_hang label {
-    padding-top: 5px;
-}
-
-.pay_giao_hang label {
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.phi-giao-hang {
-    display: flex;
-}
-
-.pay_total_money {
-    padding-bottom: 15px;
-    border-bottom: 3.5px solid #eaeaee;
-}
-
-.total_money {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.phuong-thuc-pay {
-    padding-top: 20px;
-}
-
-.phuong-thuc-pay-items-box {
-    border-bottom: 1px solid #eaeaee;
-}
-
-.phuong-thuc-pay-items {
-    display: flex;
-    padding: 8px 0;
-}
-
-.phuong-thuc-pay-items input {
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-.block {
-    transform: translateY(0);
-    height: max-content;
-    overflow: inherit;
-    padding-bottom: 5px;
 }

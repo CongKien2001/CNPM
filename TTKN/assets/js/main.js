@@ -5,8 +5,6 @@ var phukien = document.getElementById('phukien');
 var oldphone = document.getElementById('oldphone');
 var contact = document.getElementById('contact');
 var giohang = document.getElementById('giohang');
-var thanhtoan = document.getElementById('thanhtoan');
-
 var IP = document.getElementById('IP');
 var SA = document.getElementById('SA');
 var VI = document.getElementById('VI');
@@ -21,9 +19,6 @@ var OnclickPhuKien = document.querySelector('.content_phukien');
 var OnclickOldPhone = document.querySelector('.content_oldphone');
 var OnclickContact = document.querySelector('.content_contact');
 var OnclickGioHang = document.querySelector('.content_giohang');
-var OnclickThanhToan = document.querySelector('.content_thanhtoan');
-
-
 var OnclickIphone = document.querySelector('.Iphone');
 var OnclickSamsung = document.querySelector('.Samsung');
 var OnclickVivo = document.querySelector('.Vivo');
@@ -159,18 +154,6 @@ giohang.onclick = function() {
     OnclickContact.style.display = 'none';
     OnclickGioHang.style.display = 'block';
 }
-
-thanhtoan.onclick = function() {
-    OnclickThanhToan.style.display = 'block';
-    OnclickHome.style.display = 'none';
-    OnclickPhone.style.display = 'none';
-    OnclickTablet.style.display = 'none';
-    OnclickPhuKien.style.display = 'none';
-    OnclickOldPhone.style.display = 'none';
-    OnclickContact.style.display = 'none';
-    OnclickGioHang.style.display = 'none';
-}
-
 
 // Modal Register
 const imgLogins = document.querySelector('.js-imglogin');

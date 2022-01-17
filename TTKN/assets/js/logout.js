@@ -1,8 +1,5 @@
 // logout
 const SettingLogout = document.querySelector('.js-logout');
-// SettingLogout.onclick = function() {
-//     confirm("bạn có muốn đăng xuất");
-// }
 const modalLogout = document.querySelector('.modal-logout');
 const JsLogout = document.querySelector('.logout');
 
