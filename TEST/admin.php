@@ -1,3 +1,18 @@
+<?php 
+    session_start();    
+    require("config.php");
+    $sql = "select * from signin";
+    $result=mysqli_query($conn , $sql);
+    $row = mysqli_fetch_assoc($result);
+    if(!isset($_SESSION["username"])){
+        echo "<script language='javascript'>alert('Bạn cần phải đăng nhập!');";
+        echo " location.href='index.php';</script>";
+    }
+    if($_SESSION["level"]!=1){
+        header("location: user.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +30,7 @@
     <div class="header">
         <div class="header_top">
             <div class="header_right">
-                <span class="header_ma">NHẬP MÃ TTKN ĐỂ GIẢM 20%</span>
+                <span class="header_ma">TRANG QUẢN LÝ THÔNG TIN SẢN PHẨM</span>
             </div>
             <div class="header_logo">
                 <a class="header_phone">
@@ -47,18 +62,18 @@
                 </button>
             </div>
             <div class="header_cart">
-                <a style="text-decoration: none" href="">
-                    <span class="header_cart_text">GIỎ HÀNG </span>
+                <a style="text-decoration: none" id="giohang" class="header_cart-icon header_home_cart">
+                    <span class="header_cart_text">THÊM SẢN PHẨM </span>
                 </a>
-                <a href="" class="header_cart_logo">
-                    <i class="fas fa-shopping-cart"></i>
+                <a class="header_cart_logo header_home_cart">
+                    <i class="header_home_cart fas fa-shopping-cart"></i>
                 </a>
             </div>
             <div class="header_login">
-                <button class="header_login_text js-imglogin">ĐĂNG KÝ</button>
-                <button class="header_login_text js-dangnhap">ĐĂNG NHẬP</button>
-
+                <button class="header_login_text js-dangnhap js-logout">ĐĂNG XUẤT</button>
             </div>
+            <h2 class="user-name"><?php   echo $_SESSION["username"]?> <i class="fas fa-caret-down"></i></h2>
+
         </div>
 
         <div class="header_home">
@@ -166,7 +181,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -202,7 +217,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -237,7 +252,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -271,7 +286,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -306,7 +321,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -341,7 +356,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -376,7 +391,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -411,7 +426,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -455,7 +470,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -490,7 +505,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -525,7 +540,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -560,7 +575,7 @@
                                 </div>
                             </div>
                             <div class="content_phone_cart">
-                                <a href="" class="content_phone_cart_btn">
+                                <a class="content_phone_cart_btn">
                                     <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
                                 </a>
                             </div>
@@ -624,7 +639,7 @@
                                             <hr>
                                         </span>
                                     <div class="footer_gioithieu">
-                                        SHINE SKY là công ty con của tập đoàn LỘC PHÁT GROUP,đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam.SHINE SKY sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                        TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
                                     </div>
                                 </div>
                             </div>
@@ -635,7 +650,7 @@
                         <div class="footer-1">
                             <div class="footer_items">
                                 <div class="col">
-                                    <span class="footer_title">TTKN
+                                    <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
                                         <hr>
                                     </span>
                                     <div class="footer_combo">
@@ -649,19 +664,19 @@
                                     </div>
                                     <div class="footer_combo">
                                         <div class="footer_combo_box">
-                                            <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                            <img src="./assets/img/iphone2.jpg" alt="">
                                             <div class="footer_combo_heading">
-                                                <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
-                                                <div class="footer_combo_money">25,990,000đ</div>
+                                                <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                                <div class="footer_combo_money">34,990,000đ</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="footer_combo">
                                         <div class="footer_combo_box">
-                                            <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                            <img src="./assets/img/oppo3.jpg" alt="">
                                             <div class="footer_combo_heading">
-                                                <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
-                                                <div class="footer_combo_money">25,990,000đ</div>
+                                                <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                                <div class="footer_combo_money">18,990,000đ</div>
                                             </div>
                                         </div>
                                     </div>
@@ -675,7 +690,7 @@
                             <div class="footer_items">
                                 <div class="col">
                                     <span class="footer_title">                                   
-                                            TTKN
+                                            THÔNG TIN VÀ HƯỚNG DẪN
                                             <hr>
                                         </span>
                                     <div class="footer_info">Giao hàng và thanh toán</div>
@@ -693,7 +708,7 @@
                             <div class="footer_items">
                                 <div class="col">
                                     <span class="footer_title">                                   
-                                            TTKN
+                                           ĐỊA CHỈ CỬA HÀNG
                                             <hr>
                                     </span>
                                     <div class="footer_address">Số 207a, Trần Duy Hưng</div>
@@ -707,7 +722,7 @@
                     </div>
                 </div>
                 <div class="content_footer_heading">
-                    <span>Copyright 2021 © Bản quyến thuộc về tập đoàn LỘC PHÁT GROUP</span>
+                    <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
                 </div>
             </div>
         </div>
@@ -745,22 +760,24 @@
                                 </span>
                             <div class="shop_NSX-item-box">
                                 <div class="shop_NSX-list">
-                                    <a href="" class="shop_NSX-a">
+                                    <a style="text-decoration: none" id="IP" class="shop_NSX-a">
                                         <span>IPhone</span>
-                                        <a href="" class="shop_NSX-a">
-                                            <span>SAMSUNG</span>
-                                            <a href="" class="shop_NSX-a">
-                                                <span>ViVo</span>
-                                            </a>
-                                            <a href="" class="shop_NSX-a">
-                                                <span>Xiaomi</span>
-                                            </a>
-                                            <a href="" class="shop_NSX-a">
-                                                <span>OPPO</span>
-                                            </a>
-                                            <a href="" class="shop_NSX-a">
-                                                <span>Realme</span>
-                                            </a>
+                                    </a>
+                                    <a style="text-decoration: none" id="SA" class="shop_NSX-a">
+                                        <span>SAMSUNG</span>
+                                    </a>
+                                    <a style="text-decoration: none" id="VI" class="shop_NSX-a">
+                                        <span>ViVo</span>
+                                    </a>
+                                    <a style="text-decoration: none" id="XI" class="shop_NSX-a">
+                                        <span>Xiaomi</span>
+                                    </a>
+                                    <a style="text-decoration: none" id="OP" class="shop_NSX-a">
+                                        <span>OPPO</span>
+                                    </a>
+                                    <a style="text-decoration: none" id="RE" class="shop_NSX-a">
+                                        <span>Realme</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -783,7 +800,7 @@
                                 </select>
 
                             <div class="row">
-                                <div class="col dt product_selling-item">
+                                <div class="col dt product_selling-item Samsung">
                                     <div class="product_selling-box">
                                         <a href="">
                                             <img src="./assets/img/samsung4.jpg" alt="">
@@ -812,10 +829,10 @@
                                     </div>
                                 </div>
                                 <!----->
-                                <div class="col dt product_selling-item">
+                                <div class="col dt product_selling-item Iphone">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/iphone2.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -823,14 +840,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                34,999,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                33,000,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -841,10 +858,10 @@
                                     </div>
                                 </div>
                                 <!----->
-                                <div class="col dt product_selling-item">
+                                <div class="col dt product_selling-item Vivo">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/vivo1.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -852,14 +869,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Điện thoại Vivo Y21</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                4,500,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                4,000,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -870,10 +887,10 @@
                                     </div>
                                 </div>
                                 <!----->
-                                <div class="col dt product_selling-item">
+                                <div class="col dt product_selling-item Oppo">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/oppo2.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -881,14 +898,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Điện thoại OPPO A74</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                6,999,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                6,000,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -899,10 +916,10 @@
                                     </div>
                                 </div>
                                 <!----->
-                                <div class="col dt product_selling-item">
+                                <div class="col dt product_selling-item Oppo">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/oppo3.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -910,14 +927,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                18,999,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                18,000,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -928,10 +945,10 @@
                                     </div>
                                 </div>
                                 <!----->
-                                <div class="col dt product_selling-item">
+                                <div class="col dt product_selling-item Realme">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/realme1.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -939,14 +956,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Điện thoại Realme C11 (2021)</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                3,300,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                2,900,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -958,16 +975,114 @@
                                 </div>
 
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
+        </div>
+
+        <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                       ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
         </div>
     </div>
 
-
     <!-- ------------------------------------------------------------------------------------->
-
     <div class="content_tablet">
         <div class="content_tablet-header">
             <div class="shop-big-img" style="background-image: url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow1.png),url(https://tonycongmmo.com/wp-content/themes/flatsome/assets/img/effects/snow2.png);">
@@ -1001,20 +1116,14 @@
                             <div class="shop_NSX-item-box">
                                 <div class="shop_NSX-list">
                                     <a href="" class="shop_NSX-a">
-                                        <span>IPhone</span>
+                                        <span>IPad</span>
                                         <a href="" class="shop_NSX-a">
                                             <span>SAMSUNG</span>
                                             <a href="" class="shop_NSX-a">
-                                                <span>ViVo</span>
+                                                <span>Lenovo</span>
                                             </a>
                                             <a href="" class="shop_NSX-a">
-                                                <span>Xiaomi</span>
-                                            </a>
-                                            <a href="" class="shop_NSX-a">
-                                                <span>OPPO</span>
-                                            </a>
-                                            <a href="" class="shop_NSX-a">
-                                                <span>Realme</span>
+                                                <span>Huawei</span>
                                             </a>
                                 </div>
                             </div>
@@ -1041,7 +1150,7 @@
                                 <div class="col dt product_selling-item">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/table-lenovo1.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -1049,14 +1158,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Máy tính bảng Lenovo Tab P11 Plus</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                9,200,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                8,200,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -1070,7 +1179,7 @@
                                 <div class="col dt product_selling-item">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/table-ipad4.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -1078,14 +1187,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Máy tính bảng iPad Air 4 Wifi 256GB (2020)</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                22,999,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                22,000,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -1099,7 +1208,7 @@
                                 <div class="col dt product_selling-item">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/table-ipad3.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -1107,14 +1216,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Máy tính bảng iPad Pro 12.9 inch Wifi 128GB (2020)</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                27,700,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                26,600,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -1128,7 +1237,7 @@
                                 <div class="col dt product_selling-item">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/table-ipad2.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -1136,14 +1245,15 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Máy tính bảng iPad mini 6 WiFi Cellular 256GB
+                                                </span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                25,999,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                24,000,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -1157,7 +1267,7 @@
                                 <div class="col dt product_selling-item">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/table-ipad1.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -1165,14 +1275,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Máy tính bảng iPad Pro M1 12.9 inch WiFi Cellular 512GB (2021)</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                42,999,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                41,900,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -1186,7 +1296,7 @@
                                 <div class="col dt product_selling-item">
                                     <div class="product_selling-box">
                                         <a href="">
-                                            <img src="./assets/img/samsung4.jpg" alt="">
+                                            <img src="./assets/img/table-huawei2.jpg" alt="">
                                         </a>
                                         <div class="btn product_selling-btn">
                                             QUICK VIEW
@@ -1194,14 +1304,14 @@
                                     </div>
                                     <div class="product_selling-info">
                                         <div class="product_selling-name">
-                                            <span>Điện thoại Samsung Galaxy Ultra 5G 128Gb</span>
+                                            <span>Máy tính bảng Huawei MatePad T10</span>
                                         </div>
                                         <div class="product_selling-price">
                                             <div class="produc_selling-old">
-                                                26,999,000 <sup>đ</sup>
+                                                5,399,000 <sup>đ</sup>
                                             </div>
                                             <div class="produc_selling-now">
-                                                25,000,000 <sup>đ</sup>
+                                                4,900,000 <sup>đ</sup>
                                             </div>
                                         </div>
                                         <div class="btn_add">
@@ -1218,22 +1328,1945 @@
                 </div>
             </div>
         </div>
+
+        <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                       ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
+        </div>
     </div>
 
     <!------------------------------------->
     <div class="content_phukien">
         <div class="shop-big-img" style="background-image: url(https://ezcomclass.com/wp-content/uploads/2020/06/image-0-compressed-16-300x225.jpg);">
         </div>
+        <div class="content_phukien_box">
+            <div class="content_phukien_header">
+                <span class="content_phukien_title">
+                        PHỤ KIỆN NỔI BẬT
+                    </span>
+                <div class="content_phukien_main">
+                    <div class="content_phukien_items">
+                        <a href="">
+                            <div class="content_phukien_items_img">
+                                <img src="https://cdn.tgdd.vn/Category/57/5-Pinsa%CC%A3cdu%CC%9B%CC%A3pho%CC%80ng-120x120.png" alt="">
+                            </div>
+                        </a>
+                        <div class="content_header_items_des">
+                            Sạc dự phòng
+                        </div>
+                    </div>
 
+                    <div class="content_phukien_items">
+                        <a href="">
+                            <div class="content_phukien_items_img1">
+                                <img src="https://cdn.tgdd.vn/Category/54/21-Tainghe-120x120.png" alt="">
+                            </div>
+                        </a>
+                        <div class="content_header_items_des">
+                            Tai nghe
+                        </div>
+                    </div>
+
+                    <div class="content_phukien_items">
+                        <a href="">
+                            <div class="content_phukien_items_img2">
+                                <img src="https://cdn.tgdd.vn/Category/2162/22-Loa2-120x120.png" alt=""> </div>
+                        </a>
+                        <div class="content_header_items_des">
+                            Loa
+                        </div>
+                    </div>
+
+                    <div class="content_phukien_items">
+                        <a href="">
+                            <div class="content_phukien_items_img3">
+                                <img src="https://cdn.tgdd.vn/Category/4727/16-Thie%CC%82%CC%81tbi%CC%A3ma%CC%A3ng-120x120.png" alt=""> </div>
+                        </a>
+                        <div class="content_header_items_des">
+                            Thiết bị mạng
+                        </div>
+                    </div>
+
+                    <div class="content_phukien_items">
+                        <a href="">
+                            <div class="content_phukien_items_img4">
+                                <img src="https://cdn.tgdd.vn/Category/86/13-Chuo%CC%A3%CC%82tma%CC%81yti%CC%81nh-120x120.png" alt=""> </div>
+                        </a>
+                        <div class="content_header_items_des">
+                            Chuột, bàn phím
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================ -->
+        <div class="content_phukien_body">
+            <div class="content_sacduphong">
+                <div class="content_sacduphong_img">
+                    <img src="https://cdn.tgdd.vn/2021/10/banner/pinsac-1200x150.png" alt="">
+                </div>
+
+                <div class="content_phone_main">
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img src="./assets/img/sac1.jpg" alt=""> </a>
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Polymer 10.000 mAh Type C Energizer UE10054BK                                        </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    520,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    495,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -------samsung----- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/sac2.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Polymer 10.000 mAh Hydrus PA CK01                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    324,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    204,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- ---------------tablehuawei------------------ -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/sac3.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Polymer 10.000 mAh Type C Xmobile PJ JP190ST                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    495,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    455,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -----------ipad-------------- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/sac4.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Polymer 10.000 mAh Type C QC3.0 eValu PA F1 Air                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    550,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    450,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content_phukien_body">
+            <div class="content_sacduphong">
+                <div class="content_sacduphong_img">
+                    <img src="https://cdn.tgdd.vn/2021/10/banner/taignhe-1200x150.png" alt=""> </div>
+
+                <div class="content_phone_main">
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img src="./assets/img/tai-nghe1.jpg" alt=""> </a>
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Tai nghe Bluetooth AirPods Pro                                  </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    4,520,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    3,495,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -------samsung----- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/tai-nghe2.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Tai nghe Bluetooth AirPods 2 Apple MV7N2                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    3,324,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    2,204,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- ---------------tablehuawei------------------ -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/tai-nghe3.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Tai nghe Bluetooth True Wireless Soundpeats Q                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    795,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    655,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -----------ipad-------------- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/tai-nghe4.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Tai nghe Bluetooth True Wireless Hydrus TS12BC                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    450,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    350,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content_phukien_body">
+            <div class="content_sacduphong">
+                <div class="content_sacduphong_img">
+                    <img src="https://cdn.tgdd.vn/2021/10/banner/loa-1200x150.png" alt=""> </div>
+
+                <div class="content_phone_main">
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img src="./assets/img/loa1.jpg" alt=""> </a>
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Loa Bluetooth MozardX BM01      </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    1,120,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    995,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -------samsung----- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/loa2.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Loa Bluetooth JBL Charge 4                                   </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    3,324,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    2,204,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- ---------------tablehuawei------------------ -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/loa3.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Loa Bluetooth Harman Kardon Onyx Studio 6                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    4,495,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    3,455,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -----------ipad-------------- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/loa4.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Loa Bluetooth JBL Go 3                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    1,000,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    950,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content_phukien_body">
+            <div class="content_sacduphong">
+                <div class="content_sacduphong_img">
+                    <img src="https://cdn.tgdd.vn/2021/10/banner/mang-1200x150.png" alt=""> </div>
+
+                <div class="content_phone_main">
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img src="./assets/img/mang1.jpg" alt=""> </a>
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Router Chuẩn Wifi 6 Băng Tần Kép Asus AX55 Đen                                        </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    2,520,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    1,495,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -------samsung----- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/mang2.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Router Wifi Chuẩn Wifi 6 AX1500 TP-Link Archer                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    1.324,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    1,204,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- ---------------tablehuawei------------------ -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/mang3.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Router Wifi Chuẩn Wifi 6 Linksys E7350AH Đen                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    2,495,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    2,155,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -----------ipad-------------- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/mang4.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Router Wifi Chuẩn AC1200 Totolink A720R Đen                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    550,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    450,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content_phukien_body">
+            <div class="content_sacduphong">
+                <div class="content_sacduphong_img">
+                    <img src="https://cdn.tgdd.vn/2021/10/banner/gaming-1200x150-1.png" alt=""> </div>
+
+                <div class="content_phone_main">
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img src="./assets/img/chuot1.jpg" alt=""> </a>
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Chuột Có Dây Gaming Razer DeathAdder V2                                        </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    2,520,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    1,495,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -------samsung----- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/banphim1.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Bàn Phím Cơ Có Dây Gaming Razer BlackWidow V3                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    3,724,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    3,204,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- ---------------tablehuawei------------------ -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/chuot2.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Chuột không dây Gaming Corsair Iron Claw RGB Đen                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    2,195,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    1,455,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- -----------ipad-------------- -->
+                    <div class="content_phone_items">
+                        <div class="content_phone_selling_img">
+                            <a class="img" href="">
+                                <img class="content_phone_img" src="./assets/img/banphim2.jpg" alt="">
+                            </a>
+
+                            <div class="content_phone_btn">
+                                <div class="btn content_phone_btn" name="content_phone_btn">QUICK VIEW</div>
+                            </div>
+                        </div>
+                        <div class="content_phone_info">
+                            <div class="content_phone_name">
+                                <span>
+                                    Bàn Phím Cơ Có Dây Gaming Razer BlackWidow                                    </span>
+                            </div>
+                            <div class="content_phone_price">
+                                <div class="content_phone_price_old">
+                                    3,350,000
+                                    <sup>đ</sup>
+                                </div>
+                                <div class="content_phone_price_now">
+                                    3,150,000
+                                    <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="content_phone_cart">
+                                <a class="content_phone_cart_btn">
+                                    <span class="content_phone_cart_btn_add btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ===================================================================== -->
+        <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                       ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
+        </div>
     </div>
+
     <!-------------------->
     <div class="content_oldphone">
 
-    </div>
-    <!------------------------------------->
-    <div class="content_contact">
+        <div class="content_oldphone-box">
+            <div class="grid wide">
+                <div class="content_oldphone-title">
+                    <span>MÁY CŨ NỔI BẬT</span>
+                </div>
+                <div class="row">
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/maycu1.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>iPhone XS Max 64GB Cũ</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    25,400,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    15,000,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/maycu2.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>iPhone 8 Plus 64GB cũ</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    15,999,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    8,000,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/maycu3.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>iPhone 11 Pro Max 64GB Cũ</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    21,500,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    16,000,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/maycu4.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>Điện Thoại iPhone 6S Plus 32GB cũ</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    6,999,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    3,000,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/watch1.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>Apple Watch Series 5</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    5,999,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    3,000,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/maycu5.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>Máy Tính Bảng iPad 9.7 – 4G – 32GB (2018) cũ</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    7,300,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    5,000,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/maycu6.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>Macbook Pro 2019 cũ</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    24,999,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    20,000,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!----->
+                    <div class="col ddt product_selling-item">
+                        <div class="product_selling-box">
+                            <a href="">
+                                <img src="./assets/img/maycu7.jpg" alt="">
+                            </a>
+                            <div class="btn product_selling-btn">
+                                QUICK VIEW
+                            </div>
+                        </div>
+                        <div class="product_selling-info">
+                            <div class="product_selling-name">
+                                <span>Loa Sony SRS-XB43 Extra Bass cũ</span>
+                            </div>
+                            <div class="product_selling-price">
+                                <div class="produc_selling-old">
+                                    3,300,000 <sup>đ</sup>
+                                </div>
+                                <div class="produc_selling-now">
+                                    2,200,000 <sup>đ</sup>
+                                </div>
+                            </div>
+                            <div class="btn_add">
+                                <a href="" class="shop_NSX-a link_add-cart">
+                                    <span class="btn_add-cart">THÊM VÀO GIỎ HÀNG</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                       ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
+        </div>
+
 
     </div>
+
+    <!------------------------------------->
+    <div class="content_contact">
+        <div class="lienhe_body">
+            <div class="lienhe_top-box">
+                <div class="lienhe_top">
+                    <div class="lienhe_connect">
+                        <div class="lienhe_connect-title">
+                            <span>Hãy Kết Nối Với Chúng Tôi</span>
+                        </div>
+                        <div class="lienhe_connect-icon-box">
+                            <div class="lienhe_connect-icon lienheFB">
+                                <a href="" class="shop_NSX-a">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                            <div class="lienhe_connect-icon lienheIT">
+                                <a href="" class="shop_NSX-a">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="lienhe_connect-icon lienheTW">
+                                <a href="" class="shop_NSX-a">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                            <div class="lienhe_connect-icon lienhePH">
+                                <a href="" class="shop_NSX-a">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
+                            <div class="lienhe_connect-icon lienheYT">
+                                <a href="" class="shop_NSX-a">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lienhe_mix">
+                <div class="lienhe_mix-items">
+                    <div class="lienhe_mix-img">
+                        <img src="./assets/img/lienhe-mid1.jpg" alt="">
+                    </div>
+                    <div class="lienhe_mix-city">
+                        <span>Hà Nội</span>
+                    </div>
+                    <div class="lienhe_mix-street">
+                        <span>Số 121 đường Cầu Giấy</span>
+                    </div>
+                    <div class="lienhe_mix-district">
+                        <span>Quận Cầu Giấy, Thành Phố Hà Nội</span>
+                    </div>
+                    <div class="lienhe_mix-phone">
+                        <span>SĐT: 0123456789</span>
+                    </div>
+                    <div class="lienhe_mix-email">
+                        <span>Email: minhnhan04102001@gmail.com</span>
+                    </div>
+                </div>
+                <div class="lienhe_mix-items">
+                    <div class="lienhe_mix-img">
+                        <img src="./assets/img/lienhe-mid2.jpg" alt="">
+                    </div>
+                    <div class="lienhe_mix-city">
+                        <span>Hồ Chí Minh</span>
+                    </div>
+                    <div class="lienhe_mix-street">
+                        <span>6A3, Phạm Ngũ Lão</span>
+                    </div>
+                    <div class="lienhe_mix-district">
+                        <span>Quận 1, Thành phố Hồ Chí Minh</span>
+                    </div>
+                    <div class="lienhe_mix-phone">
+                        <span>SĐT: 1234567890</span>
+                    </div>
+                    <div class="lienhe_mix-email">
+                        <span>Email: minhnhan04102001@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="lienhe_bottom-box">
+                        <div class="lienhe_bottom">
+                            <div class="lienhe_bottom-title">
+                                <hr class="lienhe_hr">
+                                <span>
+                                    Vị Trí Cửa Hàng Trên Bản Đồ
+                                </span>
+                                <hr class="lienhe_hr">
+                            </div>
+                            <div class="lienhe_map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8858.70173270601…YyBCw6FjaCBraG9hIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1635151693471!5m2!1svi!2s"
+                                 style="border:0;" allowfullscreen loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div> -->
+        </div>
+
+        <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                       ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!------------------------------------->
+    <!-- <div class="content_giohang">
+        <div class="content_giohang-box">
+            <div class="grid wide">
+                <div class="lienhe_bottom-box">
+                    <div class="lienhe_bottom">
+                        <div class="lienhe_bottom-title">
+                            <hr class="lienhe_hr">
+                            <span>
+                                GIỎ HÀNG CỦA BẠN
+                            </span>
+                            <hr class="lienhe_hr">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cart_main">
+                    <div class="row">
+                        <div class="col dii dtt cart_pc" style="position: relative;">
+                            <form action="" method="post">
+                                <table class="cart_table">
+                                    <tbody>
+                                        <tr>
+                                            <div class="">
+                                                <th class="cart_product">SẢN PHẨM</th>
+                                                <th class="cart_price">GIÁ</th>
+                                                <th>SỐ LƯỢNG</th>
+                                                <th>TẠM TÍNH</th>
+                                            </div>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="cart_product_foot">
+                                    <a href="" class="shop_NSX-b">
+                                        <div class="continue_view">
+                                            <i class="fas fa-long-arrow-alt-left"></i>
+                                            <span>TIẾP TỤC XEM SẢN PHẨM</span>
+                                        </div>
+                                    </a>
+                                    <button type="submit" class="update_cart opacity">
+                                        <span style="padding-top: 3px;font-size:13px;">CẬP NHẬT GIỎ HÀNG</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- CART_MOBILE -->
+                        <!-- <div class="col dtt cart_mobile" style="position: relative;">
+                            <form action="" method="post">
+                                <div class="cart_table">
+                                        <div class="cart_table_header">  
+                                            <span class="">SẢN PHẨM</span>
+                                            <span>SỐ LƯỢNG</span>
+                                        </div>
+                                </div>
+                                <div class="cart_product_foot">
+                                    <a href="" class="shop_NSX-b">
+                                        <div class="continue_view">
+                                            <i class="fas fa-long-arrow-alt-left"></i>
+                                            <span>TIẾP TỤC XEM SẢN PHẨM</span>
+                                        </div>
+                                    </a>
+                                    <button type="submit" class="update_cart update_cart2 opacity">
+                                        <span style="padding-top: 3px;font-size:13px;">CẬP NHẬT GIỎ HÀNG</span>
+                                    </button>
+                                </div> 
+                            </form>
+                        </div> -->
+                        <div class="col dt dtt cart_right">
+                            <div class="cart_right-header">
+                                <span>CỘNG GIỎ HÀNG</span>
+                            </div>
+                            <div class="tam-tinh">
+                                <span>Tạm tính</span>
+                            </div>
+                            <div class="giao-hang">
+                                <div class="giao-hang-title flex">
+                                    <span> Phí giao hàng</span>
+                                </div>
+                                <div class="giao-hang-main">
+                                    <div class="phi-giao-hang"><span style="padding-top: 4px;padding-right:6px">Đồng giá:</span> <span style="font-weight: 600;">20.000<sup>đ</sup></span></div>
+                                </div>
+                            </div>
+                            <div class="phieu-uu-dai">
+                                <i class="fas fa-tag"></i>
+                                <span style="font-weight: 600;font-size:17px;">Phiếu ưu đãi</span>
+                            </div>
+                            <div class="ma-uu-dai">
+                                <input type="text" placeholder="Mã ưu đãi">
+                                <button type="submit">Áp dụng</button>
+                            </div>
+                            <div class="total_money">
+                                <div class="total_money-title">
+                                    <span>Tổng tiền:</span>
+                                </div>
+                            </div>
+                            <a style="text-decoration: none" id="thanhtoan" class="shop_NSX-a ">
+                                <div  class="thanh-toan">
+                                    <span>TIẾN HÀNH THANH TOÁN</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                    ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
+        </div>
+
+    </div> -->
+
+    <!-- <div class="content_thanhtoan">
+        <div class="content_giohang-box">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="form_pay">
+                        <div class="content_inforpay">
+                            <div class="content_inforpay_title">
+                                <span>
+                                    THÔNG TIN THANH TOÁN
+                                </span>
+                            </div>
+                            <div class="content_inforpay_name">
+                                <label for="">Tên người nhận:</label>
+                            </div>
+                            <div class="content_inforpay_phone">
+                                <label for="">Số điện thoại:</label>
+                                <input type="tel" required="true" name="phone_number">
+                            </div>
+                            <div class="content_inforpay_address">
+                                <label for="">Địa chỉ nhận hàng:</label>
+                            </div>
+                            <div class="content_inforpay_note">
+                                <label for="">Ghi chú:</label>
+                                <input type="text" placeholder="" name="pay_note">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_oder">
+                        <div class="content_inforoder">
+                            <div class="your-order-title">
+                                <span>ĐƠN HÀNG CỦA BẠN</span>
+                            </div>
+                            <div class="pay_san_pham">
+                                <span class="san-pham">SẢN PHẨM</span>
+                                <span class="tam-tinh2">TẠM TÍNH</span>
+                            </div>
+                            <div class="pay_giao_hang">
+                                <label for="">Giao hàng</label>
+                                <div class="phi-giao-hang"><span style="padding-top: 4px;padding-right:6px">Đồng giá:</span> <span style="font-weight: 600;">20.000<sup>đ</sup></span></div>
+                            </div>
+                            <div class="total_money pay_total_money">
+                                <div class="total_money-title">
+                                    <span style="font-size: 16px;">Tổng tiền:</span>
+                                </div>
+                                <div class="total-main" name="total-main">47,000,000<sup>đ</sup></div>
+                            </div>
+                            <div class="phuong-thuc-pay">
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a1">
+                                        <span>Thanh toán khi nhận hàng</span>
+                                    </div>
+                                    <div class="pay-box  abcd block" id="a1">
+                                        Trả tiền mặt khi giao hàng
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a2">
+                                        <span>Chuyển khoản ngân hàng</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a2">
+                                        Thực hiện thanh toán vào ngay tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng Mã đơn hàng của bạn trong phần Nội dung thanh toán. Đơn hàng sẽ đươc giao sau khi tiền đã chuyển.
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a3">
+                                        <span>Thanh toán với PayPal</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a3">
+                                        Trả thông qua Paypal; bạn có thể thanh toán với thẻ tín dụng nếu bạn không có tài khoản PayPal. Các giá sẽ được chuyển đổi sang USD ở trên trang của PayPal với tỷ giá USD / VND = 22770.
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a4">
+                                        <span>Quét mã MoMo</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a4">
+                                        Hãy mở App Momo lên và nhấn Đặt Hàng để quét mã thanh toán
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a5">
+                                        <span>Cổng thanh toán nội địa OnePay</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a5">
+                                        Với OnePay, bạn có thể thanh toán bằng bất cử thẻ ATM nội địa nào của Việt Nam.
+                                        <img src="./assets/img/nganhang.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="phuong-thuc-pay-items-box">
+                                    <div class="phuong-thuc-pay-items">
+                                        <input type="radio" name="radio" class="a" data-title="#a6">
+                                        <span>Cổng thanh toán Quốc tế OnePay</span>
+                                    </div>
+                                    <div class="pay-box  abcd" id="a6">
+                                        Với OnePay, bạn có thể thanh toán sử dụng các thẻ quốc tế như Visa, Master, JCB, hay Amex.
+                                        <img style="width:100%;height:100px;object-fit:cover;" src="./assets/img/nganhang2.png" alt="">
+                                    </div>
+                                </div>
+                                <button type="submit" class="dat_hang">ĐẶT HÀNG</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+         <div class="content_footer_background">
+            <div class="content_footer_contenner">
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        TTKN
+                                        <hr>
+                                    </span>
+                                <div class="footer_gioithieu">
+                                    TTKN là công ty con của tập đoàn TTKN GROUP, đứng đầu trong chuỗi cửa hàng bán lẻ lớn nhất Việt Nam. TTKN sẽ mang đến cho khách hàng những trải nghiệm tuyệt vời nhất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">SẢN PHẨM ĐÁNH GIÁ CAO
+                                    <hr>
+                                </span>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="https://github.com/CongKien2001/CNPM/blob/main/TTKN/assets/img/samsung4.jpg?raw=true" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span>
+                                            <div class="footer_combo_money">25,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/iphone2.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại iPhone 13 Pro Max 128GB</span>
+                                            <div class="footer_combo_money">34,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_combo">
+                                    <div class="footer_combo_box">
+                                        <img src="./assets/img/oppo3.jpg" alt="">
+                                        <div class="footer_combo_heading">
+                                            <span>Điện thoại OPPO Reno6 Pro 5G</span>
+                                            <div class="footer_combo_money">18,990,000đ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                        THÔNG TIN VÀ HƯỚNG DẪN
+                                        <hr>
+                                    </span>
+                                <div class="footer_info">Giao hàng và thanh toán</div>
+                                <div class="footer_info">Chế độ bảo hành</div>
+                                <div class="footer_info">Nhận hàng và đổi trả</div>
+                                <div class="footer_info">Đập hộp và nhận quà</div>
+                                <div class="footer_infoo">Chính sách bảo mật</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-1">
+                        <div class="footer_items">
+                            <div class="col">
+                                <span class="footer_title">                                   
+                                    ĐỊA CHỈ CỬA HÀNG
+                                        <hr>
+                                </span>
+                                <div class="footer_address">Số 207a, Trần Duy Hưng</div>
+                                <div class="footer_address">Số 108, Trần Hưng Đạo</div>
+                                <div class="footer_address">Số 201, Phạm Ngũ Lão, Quận 1</div>
+                                <div class="footer_address">Số 04, Nguyễn Huệ, Quận 1</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_footer_heading">
+                <span>Copyright 2021 © Bản quyến thuộc về tập đoàn TTKN GROUP</span>
+            </div>
+        </div> 
+    </div>  -->
 
     <div class="modal-register">
         <div class="loginmain">
@@ -1297,7 +3330,27 @@
         </div>
     </div>
 
+    <div class="modal-logout">
+        <div class="logout">
+            <div class="logincontent">
+                <h2 class="loginheading center">Đăng xuất</h2>
+                <p class="songheading-sub center">Cùng nhau tận hưởng công nghệ
+                    <i class="fa fa-heartbeat"></i>
+                </p>
+                <form action="logout.php" method="POST" class="input">
+
+                    <div class="loginrow padding-top-20">
+                        <input type="submit" name="submit" value="Đăng xuất" class="loginbton">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/logout.js"></script>
     <script src="./assets/js/main.js"></script>
+
 </body>
 
 </html>
