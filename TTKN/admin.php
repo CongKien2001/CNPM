@@ -1,7 +1,7 @@
 <?php 
     session_start();    
     require("config.php");
-    $sql = "select * from product";
+    $sql = "select * from sanpham";
     $result=mysqli_query($conn , $sql);
     $row = mysqli_fetch_assoc($result);
     if(!isset($_SESSION["username"])){

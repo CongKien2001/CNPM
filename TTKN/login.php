@@ -9,11 +9,11 @@
 
         $password = md5($password);
 
-        $sql = "select * from login where username='$username' and password = '$password'";
+        $sql = "select * from signin where username='$username' and password = '$password'";
         $user = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($user);
 
-        $sqll = "select id from login where username='$username' and password = '$password'";
+        $sqll = "select id from signin where username='$username' and password = '$password'";
         $userr = mysqli_query($conn, $sqll);
 
         if(mysqli_num_rows($userr) > 0){

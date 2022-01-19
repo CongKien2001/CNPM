@@ -15,7 +15,7 @@
             die();
         }
 
-        $sql = "select * from login where username='$username' ";
+        $sql = "select * from signin where username='$username' ";
         $old = mysqli_query($conn, $sql);
         $password = md5($password);
 
@@ -25,7 +25,7 @@
             die();
         }
 
-        $sql = "insert into login (username, email, password, level) values('$username', '$email', '$password','$level')";
+        $sql = "insert into signin (username, email, password, level) values('$username', '$email', '$password','$level')";
         mysqli_query($conn, $sql);
 
         $username = preg_replace('/\s+/', '', $username);

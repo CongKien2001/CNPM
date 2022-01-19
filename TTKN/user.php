@@ -3,7 +3,7 @@
     require("config.php");
     $username = $_SESSION["username"];
     $username = preg_replace('/\s+/', '', $username);
-    $sql = "select * from product";
+    $sql = "select * from sanpham";
     $result=mysqli_query($conn , $sql);
     $row = mysqli_fetch_assoc($result);
     if(!isset($_SESSION["username"])){

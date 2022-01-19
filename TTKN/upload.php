@@ -9,7 +9,7 @@
         $giasub = $_POST['giasub'];
         $anh = $_POST['anh'];
         
-        $sql = "insert into product (masp, tensp, gia, giasub, anh) values('$masp', '$tensp', '$gia','$giasub', '$anh') ";
+        $sql = "insert into sanpham (masp, tensp, gia, giasub, anh) values('$masp', '$tensp', '$gia','$giasub', '$anh') ";
         $user = mysqli_query($conn, $sql);
 
         if($user){
