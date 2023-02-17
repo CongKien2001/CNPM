@@ -30,7 +30,7 @@
     <div class="header">
         <div class="header_top">
             <div class="header_right">
-                <span class="header_ma">TRANG QUẢN LÝ THÔNG TIN SẢN PHẨM</span>
+                <span class="header_ma">TRANGGGGGGG QUẢN LÝ THÔNG TIN SẢN PHẨM</span>
             </div>
             <div class="header_logo">
                 <a class="header_phone">
